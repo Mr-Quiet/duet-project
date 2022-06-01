@@ -363,6 +363,8 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  -ms-grid-column-align: start;
+      justify-self: start;
 }
 
 .body-footer__logo::before {
@@ -502,24 +504,14 @@ body {
   position: relative;
 }
 
-.about-university::before {
-  content: "";
+.about-university__content {
+  padding: 0;
+  background-color: #04134e;
   position: absolute;
   width: 100%;
-  height: 17.5625rem;
-  bottom: 0;
+  height: 100%;
+  top: 0;
   left: 0;
-  background: url("../img/top/bg-decor.svg") left top/cover no-repeat;
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
-}
-
-.about-university__content {
-  position: relative;
-  z-index: 5;
-  padding: 0 0.9375rem;
-  padding-bottom: 12.1875rem;
   -webkit-transition: -webkit-transform 0.3s ease 0s;
   transition: -webkit-transform 0.3s ease 0s;
   -o-transition: transform 0.3s ease 0s;
@@ -536,6 +528,13 @@ body {
           transform: scale(0);
 }
 
+.about-university__body {
+  position: relative;
+  z-index: 5;
+  padding: 0 0.9375rem;
+  min-height: 37.5rem;
+}
+
 .about-university__bgimage {
   position: absolute;
   width: 100%;
@@ -546,7 +545,7 @@ body {
      object-fit: cover;
 }
 
-.about-university__body {
+.about-university__items {
   position: relative;
   z-index: 2;
   padding-top: 4.375rem;
@@ -561,19 +560,18 @@ body {
 
 .about-university__title {
   font-weight: 700;
-  font-size: 2.5rem;
   line-height: 1.35;
 }
 
-@supports (font-size: clamp( 2.25rem , 2.1088235294rem  +  0.4705882353vw , 2.5rem )) {
+@supports (font-size: clamp( 2.125rem , 1.612544484rem  +  1.0676156584vw , 2.5rem )) {
   .about-university__title {
-    font-size: clamp( 2.25rem , 2.1088235294rem  +  0.4705882353vw , 2.5rem );
+    font-size: clamp( 2.125rem , 1.612544484rem  +  1.0676156584vw , 2.5rem );
   }
 }
 
-@supports not (font-size: clamp( 2.25rem , 2.1088235294rem  +  0.4705882353vw , 2.5rem )) {
+@supports not (font-size: clamp( 2.125rem , 1.612544484rem  +  1.0676156584vw , 2.5rem )) {
   .about-university__title {
-    font-size: calc(2.25rem + 0.25 * (100vw - 30rem) / 53.125);
+    font-size: calc(2.125rem + 0.375 * (100vw - 48rem) / 35.125);
   }
 }
 
@@ -585,45 +583,79 @@ body {
 }
 
 .about-university__button {
-  position: relative;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  -o-transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
 }
 
 .about-university__video {
   background-color: #04134e;
-  position: absolute;
+  position: relative;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
   height: 100%;
-  max-height: 37.25rem;
+  max-height: 37.5rem;
   top: 0;
   left: 0;
 }
 
 .info-university {
+  position: relative;
+  top: -0.1875rem;
+  background-color: #04134e;
+}
+
+.info-university::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 11.875rem;
+  bottom: -5rem;
+  left: 0;
+  background: url("../img/top/bg-decor.svg") left top/cover repeat;
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.info-university__body {
+  position: relative;
+  z-index: 2;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  row-gap: 1.25rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 64.375rem;
   margin: 0 auto;
-  padding-bottom: 11.625rem;
-  padding-top: 2.1875rem;
-  position: relative;
-  z-index: 2;
+  padding-top: 1.875rem;
+}
+
+@supports (padding-bottom: clamp( 1.875rem , -2.4107142857rem  +  8.9285714286vw , 3.125rem )) {
+  .info-university__body {
+    padding-bottom: clamp( 1.875rem , -2.4107142857rem  +  8.9285714286vw , 3.125rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 1.875rem , -2.4107142857rem  +  8.9285714286vw , 3.125rem )) {
+  .info-university__body {
+    padding-bottom: calc(1.875rem + 1.25 * (100vw - 48rem) / 14);
+  }
 }
 
 .info-university__column {
+  padding: 0 0.9375rem;
   color: #fff;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
 }
 
 .info-university__number {
@@ -694,9 +726,8 @@ body {
   }
 
   .body-footer__logo {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
 
   .body-footer__social-networks {
@@ -793,10 +824,25 @@ body {
             transform: rotate(45deg);
   }
 
-  .about-university__content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+@supports (min-height: clamp( 11.25rem , 1.9196428571rem  +  46.6517857143vw , 24.3125rem )) {
+    .about-university__body {
+      min-height: clamp( 11.25rem , 1.9196428571rem  +  46.6517857143vw , 24.3125rem );
+    }
+}
+
+@supports not (min-height: clamp( 11.25rem , 1.9196428571rem  +  46.6517857143vw , 24.3125rem )) {
+    .about-university__body {
+      min-height: calc(11.25rem + 13.0625 * (100vw - 20rem) / 28);
+    }
+}
+
+  .about-university__body {
+    display: -ms-grid;
+    display: grid;
+  }
+
+  .about-university__items {
+    padding-top: 0rem;
   }
 
   .about-university__title {
@@ -808,7 +854,20 @@ body {
   }
 
   .about-university__video {
-    max-height: 24.375rem;
+    max-height: 24.3125rem;
+  }
+
+  .info-university::before {
+    height: 11.875rem;
+  }
+
+  .info-university__body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 25rem;
+    max-height: 17.875rem;
+    padding-bottom: 6.25rem;
   }
 }
 
@@ -821,6 +880,15 @@ body {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
+  }
+
+  .info-university__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -841,5 +909,11 @@ body {
 
   .body-footer__link:hover {
     color: #04134e;
+  }
+
+  .about-university__button:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
