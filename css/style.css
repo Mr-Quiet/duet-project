@@ -362,9 +362,11 @@ body {
   display: flex;
   -webkit-box-align: start;
       -ms-flex-align: start;
-          align-items: start;
-  -ms-grid-column-align: start;
-      justify-self: start;
+          align-items: flex-start;
+  justify-self: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .body-footer__logo::before {
