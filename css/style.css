@@ -512,20 +512,22 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  -webkit-transition: -webkit-transform 0.3s ease 0s;
-  transition: -webkit-transform 0.3s ease 0s;
-  -o-transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  -webkit-transition: opacity 0.2s ease 0s, -webkit-transform 0.3s ease 0s;
+  transition: opacity 0.2s ease 0s, -webkit-transform 0.3s ease 0s;
+  -o-transition: transform 0.3s ease 0s, opacity 0.2s ease 0s;
+  transition: transform 0.3s ease 0s, opacity 0.2s ease 0s;
+  transition: transform 0.3s ease 0s, opacity 0.2s ease 0s, -webkit-transform 0.3s ease 0s;
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
+  opacity: 1;
 }
 
 ._active-video .about-university__content {
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
+  opacity: 0;
 }
 
 .about-university__body {
