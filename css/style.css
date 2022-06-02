@@ -462,8 +462,19 @@ body {
   -webkit-column-gap: 1.25rem;
      -moz-column-gap: 1.25rem;
           column-gap: 1.25rem;
-  row-gap: 2.8125rem;
   max-width: 36.875rem;
+}
+
+@supports (row-gap: clamp( 2.1875rem , 1.8345588235rem  +  1.1764705882vw , 2.8125rem )) {
+  .top__content {
+    row-gap: clamp( 2.1875rem , 1.8345588235rem  +  1.1764705882vw , 2.8125rem );
+  }
+}
+
+@supports not (row-gap: clamp( 2.1875rem , 1.8345588235rem  +  1.1764705882vw , 2.8125rem )) {
+  .top__content {
+    row-gap: calc(2.1875rem + 0.625 * (100vw - 30rem) / 53.125);
+  }
 }
 
 .top__title {
