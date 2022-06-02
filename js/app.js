@@ -3222,8 +3222,24 @@
             autoHeight: true,
             speed: 800,
             spaceBetween: 30,
-            freeMode: true,
             loop: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 15
+                },
+                480: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 30
+                },
+                992: {
+                    slidesPerView: 2.3
+                }
+            },
             on: {}
         });
     }
