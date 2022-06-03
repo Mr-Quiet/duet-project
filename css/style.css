@@ -1323,6 +1323,10 @@ textarea.input {
 }
 
 @media (max-width: 47.99875em) {
+  .input {
+    padding: 1.125rem 0.9375rem;
+  }
+
   .touch [data-fullscreen] {
     -webkit-transition: height 0.2s;
     -o-transition: height 0.2s;
@@ -1456,6 +1460,10 @@ textarea.input {
 }
 
 @media (max-width: 29.99875em) {
+  .input {
+    padding: 0.9375rem 0.9375rem;
+  }
+
   .body-footer {
     text-align: center;
   }
