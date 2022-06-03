@@ -800,27 +800,27 @@ body {
   transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
 }
 
-@supports (padding-right: clamp( 0.9375rem , -2.0625rem  +  10vw , 6.25rem )) {
+@supports (padding-right: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem )) {
   .slide-comments__card {
-    padding-right: clamp( 0.9375rem , -2.0625rem  +  10vw , 6.25rem );
+    padding-right: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem );
   }
 }
 
-@supports not (padding-right: clamp( 0.9375rem , -2.0625rem  +  10vw , 6.25rem )) {
+@supports not (padding-right: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem )) {
   .slide-comments__card {
-    padding-right: calc(0.9375rem + 5.3125 * (100vw - 30rem) / 53.125);
+    padding-right: calc(0.625rem + 5.625 * (100vw - 30rem) / 53.125);
   }
 }
 
-@supports (padding-left: clamp( 0.9375rem , -2.0625rem  +  10vw , 6.25rem )) {
+@supports (padding-left: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem )) {
   .slide-comments__card {
-    padding-left: clamp( 0.9375rem , -2.0625rem  +  10vw , 6.25rem );
+    padding-left: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem );
   }
 }
 
-@supports not (padding-left: clamp( 0.9375rem , -2.0625rem  +  10vw , 6.25rem )) {
+@supports not (padding-left: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem )) {
   .slide-comments__card {
-    padding-left: calc(0.9375rem + 5.3125 * (100vw - 30rem) / 53.125);
+    padding-left: calc(0.625rem + 5.625 * (100vw - 30rem) / 53.125);
   }
 }
 
