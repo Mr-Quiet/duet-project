@@ -296,6 +296,21 @@ textarea.input {
           box-shadow: 0 0 5px #cacaca;
 }
 
+.header._header-scroll {
+  position: fixed;
+  top: -100%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 5px #cacaca;
+          box-shadow: 0 0 5px #cacaca;
+}
+
+.header._header-show {
+  -webkit-transition: top 0.4s ease 0s;
+  -o-transition: top 0.4s ease 0s;
+  transition: top 0.4s ease 0s;
+  top: 0;
+}
+
 .header__container {
   min-height: 3.75rem;
   padding-top: 0.625rem;

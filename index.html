@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220603195358">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220603201619">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header data-scroll="80" data-scroll-show class="header">
 			<div class="header__container">
 				<a href="#" class="header__logo _icon-duet-logo"></a>
 
@@ -22,12 +22,12 @@
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">About us</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Quiz</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Feedbacks</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Bio (footer)</a></li>
-							<li class="menu__item"><a href="#" class="menu__link menu__link_darkblue">Contact us</a></li>
+							<li class="menu__item"><a data-goto=".wrapper" href="#" class="menu__link">Home</a></li>
+							<li class="menu__item"><a data-goto-header="80" data-goto=".page__about" href="#" class="menu__link">About us</a></li>
+							<li class="menu__item"><a data-goto-header="80" data-goto="#" href="#" class="menu__link">Quiz</a></li>
+							<li class="menu__item"><a data-goto-header="80" data-goto=".page__comments" href="#" class="menu__link">Feedbacks</a></li>
+							<li class="menu__item"><a data-goto-header="80" data-goto=".footer" href="#" class="menu__link">Bio (footer)</a></li>
+							<li class="menu__item"><a data-goto-header="80" data-goto=".page__contact" href="#" class="menu__link menu__link_darkblue">Contact us</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -115,7 +115,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="slide-comments__contact contact">
+			<section class="page__contact contact">
 				<div class="contact__image-ibg"><picture><source srcset="img/contact/duet.webp" type="image/webp"><img src="img/contact/duet.jpg" alt="Учебный корпус"></picture></div>
 				<div class="contact__content">
 					<div class="contact__header">
@@ -193,7 +193,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20220603195358"></script>
+	<script src="js/app.min.js?_v=20220603201619"></script>
 </body>
 
 </html>
