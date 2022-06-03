@@ -3397,6 +3397,9 @@
                 992: {
                     slidesPerView: 1.7,
                     spaceBetween: 80
+                },
+                1024: {
+                    slidesPerView: 1.8
                 }
             },
             on: {}
@@ -3521,7 +3524,7 @@
             video.pause();
         }
     }));
-    window["FLS"] = true;
+    window["FLS"] = false;
     isWebp();
     addTouchClass();
     menuInit();
