@@ -3226,14 +3226,13 @@
             loop: true,
             breakpoints: {
                 320: {
-                    slidesPerView: 1.2,
+                    slidesPerView: 1.4,
                     spaceBetween: 10
                 },
                 480: {
                     spaceBetween: 15
                 },
                 768: {
-                    slidesPerView: 1.4,
                     spaceBetween: 30
                 },
                 992: {
