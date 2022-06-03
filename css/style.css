@@ -1011,7 +1011,7 @@ textarea.input {
   line-height: 136%;
   color: #B5B5B5;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 40.625rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
