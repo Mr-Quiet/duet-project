@@ -886,6 +886,7 @@ body {
 }
 
 .slide-comments__name {
+  white-space: nowrap;
   -ms-grid-column-align: center;
       justify-self: center;
   font-weight: 700;
