@@ -246,6 +246,12 @@ textarea {
   color: #CACACA;
 }
 
+.input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 5px #CACACA;
+          box-shadow: 0 0 5px #CACACA;
+}
+
 textarea.input {
   resize: none;
   padding: 0px 0px;
