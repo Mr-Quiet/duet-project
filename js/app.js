@@ -3378,7 +3378,7 @@
             observer: true,
             observeParents: true,
             slidesPerView: 1.2,
-            autoHeight: true,
+            autoHeight: false,
             speed: 800,
             centeredSlides: true,
             loop: true,
