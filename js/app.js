@@ -3218,18 +3218,17 @@
             modules: [ freeMode ],
             observer: true,
             observeParents: true,
-            slidesPerView: 2.3,
             autoHeight: true,
             speed: 800,
             spaceBetween: 30,
+            centeredSlides: true,
             loop: true,
             breakpoints: {
                 320: {
-                    slidesPerView: 1,
+                    slidesPerView: 1.1,
                     spaceBetween: 15
                 },
                 480: {
-                    slidesPerView: 1.1,
                     spaceBetween: 20
                 },
                 768: {
@@ -3237,7 +3236,8 @@
                     spaceBetween: 30
                 },
                 992: {
-                    slidesPerView: 2.3
+                    slidesPerView: 1.7,
+                    spaceBetween: 80
                 }
             },
             on: {}

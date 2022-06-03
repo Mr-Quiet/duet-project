@@ -647,6 +647,8 @@ body {
 }
 
 .about-university__button {
+  -ms-grid-column-align: center;
+      justify-self: center;
   border-radius: 50%;
   -webkit-transition: -webkit-transform 0.3s ease 0s;
   transition: -webkit-transform 0.3s ease 0s;
@@ -792,7 +794,6 @@ body {
   display: -ms-grid;
   display: grid;
   row-gap: 1.875rem;
-  max-width: 53.125rem;
   text-align: center;
   -webkit-transition: -webkit-transform 0.3s ease 0s;
   transition: -webkit-transform 0.3s ease 0s;
@@ -834,7 +835,21 @@ body {
   padding-bottom: 23.5294117647%;
   bottom: 0.9375rem;
   right: 0.9375rem;
-  background: url("../img/comments/quote.svg") 100%/cover no-repeat;
+  background: url("../img/comments/quote.svg") center/cover no-repeat;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+
+.swiper-slide-active .slide-comments__card {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.swiper-slide-active .slide-comments__card::before {
+  opacity: 1;
 }
 
 .slide-comments__image-ibg {
@@ -866,6 +881,7 @@ body {
   color: #B5B5B5;
   position: relative;
   z-index: 2;
+  max-width: 40.625rem;
 }
 
 .swiper {
