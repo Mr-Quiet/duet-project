@@ -789,8 +789,6 @@ body {
   border-radius: 0.9375rem;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  padding-top: 3.125rem;
-  padding-bottom: 4.375rem;
   display: -ms-grid;
   display: grid;
   row-gap: 1.875rem;
@@ -823,6 +821,30 @@ body {
 @supports not (padding-left: clamp( 0.9375rem , -0.7456683168rem  +  8.4158415842vw , 6.25rem )) {
   .slide-comments__card {
     padding-left: calc(0.9375rem + 5.3125 * (100vw - 20rem) / 63.125);
+  }
+}
+
+@supports (padding-bottom: clamp( 1.875rem , 0.0892857143rem  +  8.9285714286vw , 4.375rem )) {
+  .slide-comments__card {
+    padding-bottom: clamp( 1.875rem , 0.0892857143rem  +  8.9285714286vw , 4.375rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 1.875rem , 0.0892857143rem  +  8.9285714286vw , 4.375rem )) {
+  .slide-comments__card {
+    padding-bottom: calc(1.875rem + 2.5 * (100vw - 20rem) / 28);
+  }
+}
+
+@supports (padding-top: clamp( 1.875rem , 0.9821428571rem  +  4.4642857143vw , 3.125rem )) {
+  .slide-comments__card {
+    padding-top: clamp( 1.875rem , 0.9821428571rem  +  4.4642857143vw , 3.125rem );
+  }
+}
+
+@supports not (padding-top: clamp( 1.875rem , 0.9821428571rem  +  4.4642857143vw , 3.125rem )) {
+  .slide-comments__card {
+    padding-top: calc(1.875rem + 1.25 * (100vw - 20rem) / 28);
   }
 }
 
@@ -882,6 +904,10 @@ body {
   position: relative;
   z-index: 2;
   max-width: 40.625rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .swiper {

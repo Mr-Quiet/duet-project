@@ -3218,6 +3218,7 @@
             modules: [ freeMode ],
             observer: true,
             observeParents: true,
+            slidesPerView: 1.2,
             autoHeight: true,
             speed: 800,
             spaceBetween: 30,
@@ -3225,14 +3226,14 @@
             loop: true,
             breakpoints: {
                 320: {
-                    slidesPerView: 1.1,
-                    spaceBetween: 15
+                    slidesPerView: 1.2,
+                    spaceBetween: 10
                 },
                 480: {
-                    spaceBetween: 20
+                    spaceBetween: 15
                 },
                 768: {
-                    slidesPerView: 1.3,
+                    slidesPerView: 1.4,
                     spaceBetween: 30
                 },
                 992: {
