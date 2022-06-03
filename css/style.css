@@ -208,11 +208,22 @@ textarea {
   border-radius: 0.5rem !important;
   width: 100%;
   display: block;
-  padding: 1.375rem 20px;
+  padding: 1.375rem 1.25rem;
   border: 1px solid #CACACA;
   font-weight: 600;
-  font-size: 1.375rem;
   line-height: 137%;
+}
+
+@supports (font-size: clamp( 1.125rem , 0.2678571429rem  +  1.7857142857vw , 1.375rem )) {
+  .input {
+    font-size: clamp( 1.125rem , 0.2678571429rem  +  1.7857142857vw , 1.375rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.125rem , 0.2678571429rem  +  1.7857142857vw , 1.375rem )) {
+  .input {
+    font-size: calc(1.125rem + 0.25 * (100vw - 48rem) / 14);
+  }
 }
 
 .input::-webkit-input-placeholder {
@@ -1032,32 +1043,61 @@ textarea.input {
   }
 }
 
-@supports (padding-right: clamp( 0.9375rem , -0.2977941176rem  +  4.1176470588vw , 3.125rem )) {
+@supports (padding-right: clamp( 0.9375rem , -0.8272058824rem  +  5.8823529412vw , 4.0625rem )) {
   .contact__content {
-    padding-right: clamp( 0.9375rem , -0.2977941176rem  +  4.1176470588vw , 3.125rem );
+    padding-right: clamp( 0.9375rem , -0.8272058824rem  +  5.8823529412vw , 4.0625rem );
   }
 }
 
-@supports not (padding-right: clamp( 0.9375rem , -0.2977941176rem  +  4.1176470588vw , 3.125rem )) {
+@supports not (padding-right: clamp( 0.9375rem , -0.8272058824rem  +  5.8823529412vw , 4.0625rem )) {
   .contact__content {
-    padding-right: calc(0.9375rem + 2.1875 * (100vw - 30rem) / 53.125);
+    padding-right: calc(0.9375rem + 3.125 * (100vw - 30rem) / 53.125);
   }
 }
 
-@supports (padding-left: clamp( 0.9375rem , -0.2977941176rem  +  4.1176470588vw , 3.125rem )) {
+@supports (padding-left: clamp( 0.9375rem , -0.8272058824rem  +  5.8823529412vw , 4.0625rem )) {
   .contact__content {
-    padding-left: clamp( 0.9375rem , -0.2977941176rem  +  4.1176470588vw , 3.125rem );
+    padding-left: clamp( 0.9375rem , -0.8272058824rem  +  5.8823529412vw , 4.0625rem );
   }
 }
 
-@supports not (padding-left: clamp( 0.9375rem , -0.2977941176rem  +  4.1176470588vw , 3.125rem )) {
+@supports not (padding-left: clamp( 0.9375rem , -0.8272058824rem  +  5.8823529412vw , 4.0625rem )) {
   .contact__content {
-    padding-left: calc(0.9375rem + 2.1875 * (100vw - 30rem) / 53.125);
+    padding-left: calc(0.9375rem + 3.125 * (100vw - 30rem) / 53.125);
+  }
+}
+
+.contact__header {
+  display: -ms-grid;
+  display: grid;
+}
+
+@supports (row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem )) {
+  .contact__header {
+    row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem );
+  }
+}
+
+@supports not (row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem )) {
+  .contact__header {
+    row-gap: calc(1.25rem + 0.625 * (100vw - 30rem) / 18);
   }
 }
 
 .contact__header:not(:last-child) {
   margin-bottom: 3.125em;
+}
+
+@supports (margin-bottom: clamp( 1.875rem , -2.4107142857rem  +  8.9285714286vw , 3.125rem )) {
+  .contact__header:not(:last-child) {
+    margin-bottom: clamp( 1.875rem , -2.4107142857rem  +  8.9285714286vw , 3.125rem );
+  }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , -2.4107142857rem  +  8.9285714286vw , 3.125rem )) {
+  .contact__header:not(:last-child) {
+    margin-bottom: calc(1.875rem + 1.25 * (100vw - 48rem) / 14);
+  }
 }
 
 .contact__title {
@@ -1088,7 +1128,18 @@ textarea.input {
 .contact__form {
   display: -ms-grid;
   display: grid;
-  gap: 1.875rem;
+}
+
+@supports (row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem )) {
+  .contact__form {
+    row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem );
+  }
+}
+
+@supports not (row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem )) {
+  .contact__form {
+    row-gap: calc(1.25rem + 0.625 * (100vw - 30rem) / 18);
+  }
 }
 
 .contact__input {
@@ -1266,8 +1317,8 @@ textarea.input {
   }
 
   .contact__content {
-    margin: 0 auto;
     max-width: 37.5rem;
+    margin: 0 auto;
   }
 }
 
