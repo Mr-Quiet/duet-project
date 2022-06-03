@@ -3836,6 +3836,7 @@
             slidesPerView: 1.2,
             autoHeight: false,
             speed: 800,
+            spaceBetween: 10,
             centeredSlides: true,
             loop: true,
             autoplay: {
@@ -3845,7 +3846,7 @@
             breakpoints: {
                 320: {
                     slidesPerView: 1.4,
-                    spaceBetween: 0
+                    spaceBetween: 10
                 },
                 768: {
                     spaceBetween: 30
