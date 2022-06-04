@@ -53,6 +53,10 @@
   content: "\e906";
 }
 
+._icon-title-decor:before {
+  content: "\e907";
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -393,6 +397,19 @@ body::after {
      object-fit: contain;
 }
 
+._title-decor {
+  position: relative;
+}
+
+._title-decor::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: rotate(6deg);
+      -ms-transform: rotate(6deg);
+          transform: rotate(6deg);
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -667,6 +684,8 @@ body::after {
   font-weight: 700;
   line-height: 136%;
   color: #000;
+  padding-top: 0.9375rem;
+  padding-right: 1.25rem;
 }
 
 @supports (font-size: clamp( 2.75rem , 1.578125rem  +  3.90625vw , 4rem )) {
@@ -1066,19 +1085,25 @@ body::after {
 }
 
 .slide-comments__card::before {
-  content: "";
   position: absolute;
-  width: 31.7647058824%;
-  min-width: 6.875rem;
-  min-height: 5rem;
-  padding-bottom: 23.5294117647%;
   bottom: 0.9375rem;
   right: 0.9375rem;
-  background: url("../img/comments/quote.svg") center/cover no-repeat;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease 0s;
   -o-transition: opacity 0.3s ease 0s;
   transition: opacity 0.3s ease 0s;
+}
+
+@supports (font-size: clamp( 6.25rem , -2.2909252669rem  +  17.793594306vw , 12.5rem )) {
+  .slide-comments__card::before {
+    font-size: clamp( 6.25rem , -2.2909252669rem  +  17.793594306vw , 12.5rem );
+  }
+}
+
+@supports not (font-size: clamp( 6.25rem , -2.2909252669rem  +  17.793594306vw , 12.5rem )) {
+  .slide-comments__card::before {
+    font-size: calc(6.25rem + 6.25 * (100vw - 48rem) / 35.125);
+  }
 }
 
 .swiper-slide-active .slide-comments__card {
@@ -1360,6 +1385,11 @@ body::after {
         -ms-flex-align: space-between;
             align-items: space-between;
   }
+
+  .top__title::before {
+    color: #000;
+    right: -1.25rem;
+  }
 }
 
 @media (min-width: 61.99875em) {
@@ -1613,6 +1643,10 @@ body::after {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
+  }
+
+  .top__title {
+    padding-top: 0.625rem;
   }
 
   .info-university__column {
