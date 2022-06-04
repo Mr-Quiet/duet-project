@@ -1073,15 +1073,15 @@ body::after {
   }
 }
 
-@supports (padding-bottom: clamp( 1.875rem , 0.0892857143rem  +  8.9285714286vw , 4.375rem )) {
+@supports (padding-bottom: clamp( 1.875rem , 1.4285714286rem  +  2.2321428571vw , 2.5rem )) {
   .slide-comments__card {
-    padding-bottom: clamp( 1.875rem , 0.0892857143rem  +  8.9285714286vw , 4.375rem );
+    padding-bottom: clamp( 1.875rem , 1.4285714286rem  +  2.2321428571vw , 2.5rem );
   }
 }
 
-@supports not (padding-bottom: clamp( 1.875rem , 0.0892857143rem  +  8.9285714286vw , 4.375rem )) {
+@supports not (padding-bottom: clamp( 1.875rem , 1.4285714286rem  +  2.2321428571vw , 2.5rem )) {
   .slide-comments__card {
-    padding-bottom: calc(1.875rem + 2.5 * (100vw - 20rem) / 28);
+    padding-bottom: calc(1.875rem + 0.625 * (100vw - 20rem) / 28);
   }
 }
 
@@ -1193,6 +1193,7 @@ body::after {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+  min-height: 5.625rem;
 }
 
 .contact {
