@@ -1108,15 +1108,15 @@ body::after {
   transition: opacity 0.3s ease 0s;
 }
 
-@supports (font-size: clamp( 2.5rem , -0.6683168317rem  +  15.8415841584vw , 12.5rem )) {
+@supports (font-size: clamp( 3.125rem , 0.1547029703rem  +  14.8514851485vw , 12.5rem )) {
   .slide-comments__card::before {
-    font-size: clamp( 2.5rem , -0.6683168317rem  +  15.8415841584vw , 12.5rem );
+    font-size: clamp( 3.125rem , 0.1547029703rem  +  14.8514851485vw , 12.5rem );
   }
 }
 
-@supports not (font-size: clamp( 2.5rem , -0.6683168317rem  +  15.8415841584vw , 12.5rem )) {
+@supports not (font-size: clamp( 3.125rem , 0.1547029703rem  +  14.8514851485vw , 12.5rem )) {
   .slide-comments__card::before {
-    font-size: calc(2.5rem + 10 * (100vw - 20rem) / 63.125);
+    font-size: calc(3.125rem + 9.375 * (100vw - 20rem) / 63.125);
   }
 }
 
@@ -1172,6 +1172,10 @@ body::after {
   font-size: 1.5rem;
   line-height: 138%;
   color: #000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .slide-comments__comment {
@@ -1677,12 +1681,6 @@ body::after {
 @media (min-width: 25em) and (max-width: 47.99875em) {
   .top__title {
     padding-right: 3.4375rem;
-  }
-}
-
-@media (min-width: 29.99875em) and (max-width: 47.99875em) {
-  .slide-comments__name {
-    white-space: nowrap;
   }
 }
 
