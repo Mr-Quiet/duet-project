@@ -697,6 +697,10 @@ body::after {
   }
 }
 
+.top__title span {
+  color: #0081a7;
+}
+
 .top__title::before {
   color: #000;
 }
@@ -711,10 +715,6 @@ body::after {
   .top__title::before {
     font-size: calc(4.375rem + -0.375 * (100vw - 20rem) / 10);
   }
-}
-
-.top__title span {
-  color: #0081a7;
 }
 
 .top__info {
@@ -861,7 +861,7 @@ body::after {
   font-weight: 600;
   font-size: 1.375rem;
   line-height: 1.3636363636;
-  color: #fdfdff;
+  color: #ECECEC;
 }
 
 .about-university__button {
@@ -1098,6 +1098,7 @@ body::after {
 }
 
 .slide-comments__card::before {
+  color: #F3F3F3;
   position: absolute;
   bottom: 0.9375rem;
   right: 0.9375rem;
@@ -1107,15 +1108,15 @@ body::after {
   transition: opacity 0.3s ease 0s;
 }
 
-@supports (font-size: clamp( 6.25rem , -2.2909252669rem  +  17.793594306vw , 12.5rem )) {
+@supports (font-size: clamp( 2.5rem , -0.6683168317rem  +  15.8415841584vw , 12.5rem )) {
   .slide-comments__card::before {
-    font-size: clamp( 6.25rem , -2.2909252669rem  +  17.793594306vw , 12.5rem );
+    font-size: clamp( 2.5rem , -0.6683168317rem  +  15.8415841584vw , 12.5rem );
   }
 }
 
-@supports not (font-size: clamp( 6.25rem , -2.2909252669rem  +  17.793594306vw , 12.5rem )) {
+@supports not (font-size: clamp( 2.5rem , -0.6683168317rem  +  15.8415841584vw , 12.5rem )) {
   .slide-comments__card::before {
-    font-size: calc(6.25rem + 6.25 * (100vw - 48rem) / 35.125);
+    font-size: calc(2.5rem + 10 * (100vw - 20rem) / 63.125);
   }
 }
 
