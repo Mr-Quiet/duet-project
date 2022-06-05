@@ -4192,6 +4192,7 @@
             }));
         }
     }), 0);
+    addButtonsClass();
     document.addEventListener("click", (function(e) {
         const target = e.target;
         const video = document.querySelector(".about-university__video");
@@ -4202,25 +4203,32 @@
             document.documentElement.classList.remove("_active-video");
             video.pause();
         }
-        if (target.closest(".ask__button")) {
-            e.preventDefault();
-            document.querySelectorAll(".ask__button");
-        }
+        if (target.closest(".ask__label")) addBulletActiveClass();
     }));
-    const buttons = document.querySelectorAll(".ask__buttons");
-    if (buttons.length) buttons.forEach(((button, i) => {
-        console.log(button);
-        if (button.children.length < 6) {
-            if (!button.classList.contains("ask__buttons_two")) {
-                button.classList.add("ask__buttons_two");
-                if (button.children.length % 2) button.children[button.children.length - 1].classList.add("ask__item_span-two");
+    function addBulletActiveClass() {
+        const buttons = document.querySelector(".ask__buttons").children;
+        const bullet = document.querySelector(".swiper-pagination-bullet-active");
+        for (let i = 0; i < buttons.length; i++) {
+            const checkbox = buttons[i];
+            setTimeout((() => {
+                if (checkbox.children[0].checked) bullet.classList.add("_active");
+            }), 100);
+        }
+    }
+    function addButtonsClass() {
+        const buttons = document.querySelectorAll(".ask__buttons");
+        if (buttons.length) buttons.forEach(((button, i) => {
+            if (button.children.length < 6) {
+                if (!button.classList.contains("ask__buttons_two")) {
+                    button.classList.add("ask__buttons_two");
+                    if (button.children.length % 2) button.children[button.children.length - 1].classList.add("ask__item_span-two");
+                }
+            } else if (button.children.length > 5) {
+                if (!button.classList.contains("ask__buttons_three")) button.classList.add("ask__buttons_three");
+                if (button.children.length % 2) button.children[button.children.length - 1].classList.add("ask__item_span-three");
             }
-        } else if (button.children.length > 5) {
-            if (!button.classList.contains("ask__buttons_three")) button.classList.add("ask__buttons_three");
-            if (button.children.length % 2) button.children[button.children.length - 1].classList.add("ask__item_span-three");
-        }
-        console.log(button.children.length % 2);
-    }));
+        }));
+    }
     window["FLS"] = false;
     isWebp();
     addTouchClass();

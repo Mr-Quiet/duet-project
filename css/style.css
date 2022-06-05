@@ -10,6 +10,7 @@
   font-style: normal;
 }
 
+.swiper-pagination .swiper-pagination-bullet._active::before,
 [class*=_icon-]:before {
   font-family: "icons";
   font-style: normal;
@@ -25,7 +26,8 @@
   display: block;
 }
 
-._icon-check:before {
+._icon-check:before,
+.swiper-pagination .swiper-pagination-bullet._active:before {
   content: "\e900";
 }
 
@@ -1508,8 +1510,20 @@ body::after {
   position: relative;
 }
 
-.swiper-pagination .swiper-pagination-bullet::before {
-  content: "";
+.swiper-pagination .swiper-pagination-bullet::after {
+  content: "?";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
   width: 1.875rem;
   height: 1.875rem;
   background-color: #707070;
@@ -1520,14 +1534,38 @@ body::after {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.swiper-pagination .swiper-pagination-bullet._active {
+  background-color: #00A789;
+}
+
+.swiper-pagination .swiper-pagination-bullet._active::after {
+  content: "";
+  background-color: #00A789;
+}
+
+.swiper-pagination .swiper-pagination-bullet._active::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.375rem;
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #0081a7;
 }
 
-.swiper-pagination .swiper-pagination-bullet-active::before {
-  content: "";
+.swiper-pagination .swiper-pagination-bullet-active::after {
+  content: "?";
   width: 1.875rem;
   height: 1.875rem;
   background-color: #0081a7;
