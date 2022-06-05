@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220604160056">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220605142534">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,6 +81,100 @@
 							<p class="info-university__number">43</p>
 							<h3 class="info-university__title">Educational programs</h3>
 						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page__quiz quiz">
+				<div class="quiz__container">
+					<h2 class="quiz__title">Answer a few questions and get a complete roadmap for your career growth at our university!</h2>
+					<!-- Оболочка слайдера -->
+					<div class="quiz__slider swiper">
+						<div class="quiz__control">
+							<!-- Если нужна пагинация -->
+							<div class="swiper-pagination"></div>
+							<!-- Если нужна навигация (влево/вправо) -->
+							<button type="button" class="swiper-button-prev"></button>
+							<button type="button" class="swiper-button-next"></button>
+						</div>
+						<!-- Двигающееся часть слайдера -->
+						<form action="" method="post" class="quiz__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<article class="quiz__slide swiper-slide">
+								<div class="quiz__ask ask">
+									<h3 class="ask__title">Choose your degree</h3>
+
+									<div class="ask__buttons options">
+										<div class="ask__item options__item">
+											<input hidden id="degree_1" class="ask__checkbox options__input" checked type="radio" value="1" name="degree">
+											<label for="degree_1" class="ask__label options__label"><span class="ask__text options__text">Professional junior bachelor</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="degree_2" class="ask__checkbox options__input" type="radio" value="2" name="degree">
+											<label for="degree_2" class="ask__label options__label"><span class="ask__text options__text">Junior Bachelor</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="degree_3" class="ask__checkbox options__input" type="radio" value="3" name="degree">
+											<label for="degree_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="degree_4" class="ask__checkbox options__input" type="radio" value="4" name="degree">
+											<label for="degree_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
+										</div>
+
+									</div>
+
+
+									<!-- <div class="ask__buttons">
+											<div class="ask__item"><button type="submit" class="ask__button">Professional junior bachelor</button></div>
+											<div class="ask__item"><button type="submit" class="ask__button">Junior Bachelor</button></div>
+											<div class="ask__item"><button type="submit" class="ask__button">Bachelor</button></div>
+											<div class="ask__item"><button type="submit" class="ask__button">Master</button></div>
+										</div> -->
+								</div>
+							</article>
+
+							<article class="quiz__slide swiper-slide">
+								<div class="quiz__ask ask">
+									<h3 class="ask__title">Ask</h3>
+									<div class="ask__buttons options">
+										<div class="ask__item options__item">
+											<input hidden id="ask_1" class="ask__checkbox options__input" checked type="radio" value="1" name="Ask">
+											<label for="ask_1" class="ask__label options__label"><span class="ask__text options__text">Professional junior bachelor</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="ask_2" class="ask__checkbox options__input" type="radio" value="2" name="Ask">
+											<label for="ask_2" class="ask__label options__label"><span class="ask__text options__text">Junior Bachelor</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="ask_3" class="ask__checkbox options__input" type="radio" value="3" name="Ask">
+											<label for="ask_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="ask_4" class="ask__checkbox options__input" type="radio" value="4" name="Ask">
+											<label for="ask_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="ask_5" class="ask__checkbox options__input" checked type="radio" value="5" name="Ask">
+											<label for="ask_5" class="ask__label options__label"><span class="ask__text options__text">Lorem ipsum</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="ask_6" class="ask__checkbox options__input" type="radio" value="6" name="Ask">
+											<label for="ask_6" class="ask__label options__label"><span class="ask__text options__text">Lorem</span></label>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="ask_7" class="ask__checkbox options__input" type="radio" value="7" name="Ask">
+											<label for="ask_7" class="ask__label options__label"><span class="ask__text options__text">Hello man</span></label>
+										</div>
+										<!-- <div class="ask__item options__item">
+												<input hidden id="ask_8" class="ask__checkbox options__input" type="radio" value="8" name="Ask">
+												<label for="ask_8" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
+											</div> -->
+									</div>
+								</div>
+							</article>
+							</а>
+
+
 					</div>
 				</div>
 			</section>
@@ -199,7 +293,7 @@
 
 	<!-- ======================================================================================================================================================== -->
 
-	<script src="js/app.min.js?_v=20220604160056"></script>
+	<script src="js/app.min.js?_v=20220605142534"></script>
 </body>
 
 </html>
