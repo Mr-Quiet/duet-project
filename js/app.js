@@ -4060,6 +4060,7 @@
     function initSliders() {
         if (document.querySelector(".comments__slider")) {
             new core(".comments__slider", {
+                grabCursor: true,
                 modules: [ Autoplay ],
                 observer: true,
                 observeParents: true,
