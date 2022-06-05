@@ -4105,7 +4105,6 @@
                 simulateTouch: false,
                 pagination: {
                     el: ".swiper-pagination",
-                    clickable: true,
                     type: "bullets"
                 },
                 navigation: {
@@ -4211,7 +4210,11 @@
         for (let i = 0; i < buttons.length; i++) {
             const checkbox = buttons[i];
             setTimeout((() => {
-                if (checkbox.children[0].checked) bullet.classList.add("_active");
+                if (checkbox.children[0].checked) {
+                    bullet.classList.add("_active");
+                    const swiper = document.querySelector(".quiz__slider").swiper;
+                    swiper.slideNext();
+                }
             }), 100);
         }
     }
