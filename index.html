@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220606155739">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220606224552">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +39,7 @@
 					<div class="top__content">
 						<h1 class="top__title _icon-title-decor _title-decor">A good <span>education</span> is a foundation for better future</h1>
 						<p class="top__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
-						<button type="button" class="top__button button">Take a survey</button>
+						<button data-goto-header="80" data-goto=".page__quiz" type="button" class="top__button button">Take a survey</button>
 					</div>
 					<div class="top__image-ibg"><picture><source srcset="img/top/duet-team2.webp" type="image/webp"><img src="img/top/duet-team2.jpg" alt="Фото"></picture></div>
 				</div>
@@ -47,7 +47,9 @@
 			</section>
 			<section class="page__about about-university">
 				<div class="about-university__content">
-					<video class="about-university__video" src="img/about/duet-video.mp4"></video>
+					<video class="about-university__video" controlsList="nodownload" controls="controls">
+						<source src="img/about/duet-video.mp4">
+					</video>
 					<div class="about-university__splash">
 						<div class="about-university__body">
 							<picture><source srcset="img/about/duet-photo.webp" type="image/webp"><img class="about-university__bgimage" src="img/about/duet-photo.jpg" alt=""></picture>
@@ -88,12 +90,9 @@
 			<section class="page__quiz quiz">
 				<div class="quiz__container">
 					<h2 class="quiz__title">Answer a few questions and get a complete roadmap for your career growth at our university!</h2>
-					<!-- Оболочка слайдера -->
 					<div class="quiz__slider swiper">
 						<div class="quiz__control">
-							<!-- Если нужна пагинация -->
 							<div class="swiper-pagination"></div>
-							<!-- Если нужна навигация (влево/вправо) -->
 							<button type="button" class="swiper-button-prev"></button>
 							<button type="button" class="swiper-button-next"></button>
 						</div>
@@ -313,7 +312,7 @@
 
 	<!-- ======================================================================================================================================================== -->
 
-	<script src="js/app.min.js?_v=20220606155739"></script>
+	<script src="js/app.min.js?_v=20220606224552"></script>
 </body>
 
 </html>

@@ -4199,10 +4199,7 @@
         if (target.closest(".about-university__button")) {
             document.documentElement.classList.add("_active-video");
             video.play();
-        } else {
-            document.documentElement.classList.remove("_active-video");
-            video.pause();
-        }
+        } else document.documentElement.classList.remove("_active-video");
         if (target.closest(".ask__label")) addBulletActiveClass();
         if (target.closest(".ask__button")) {
             const bullets = document.querySelectorAll(".swiper-pagination-bullet");
