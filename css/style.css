@@ -857,8 +857,8 @@ body::after {
 
 .top__image-ibg img {
   border-radius: 30% 0% 45% 74%/40% 0% 100% 70%;
-  -o-object-position: left;
-     object-position: left;
+  -o-object-position: right;
+     object-position: right;
 }
 
 .about-university__content {
@@ -1501,11 +1501,17 @@ body::after {
      -moz-column-gap: 0.9375rem;
           column-gap: 0.9375rem;
   padding-top: 0.9375rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
 }
 
 .swiper-pagination .swiper-pagination-bullet {
   background-color: #707070;
   width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
   height: 0.1875rem;
   position: relative;
 }
@@ -1566,10 +1572,7 @@ body::after {
 
 .swiper-pagination .swiper-pagination-bullet-active::after {
   content: "?";
-  width: 1.875rem;
-  height: 1.875rem;
   background-color: #0081a7;
-  border-radius: 50%;
 }
 
 .ask__title {
