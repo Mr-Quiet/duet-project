@@ -1419,19 +1419,19 @@ body::after {
   color: #979797;
 }
 
-.contact__body {
+.contact__form {
   display: -ms-grid;
   display: grid;
 }
 
 @supports (row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem )) {
-  .contact__body {
+  .contact__form {
     row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem );
   }
 }
 
 @supports not (row-gap: clamp( 1.25rem , 0.2083333333rem  +  3.4722222222vw , 1.875rem )) {
-  .contact__body {
+  .contact__form {
     row-gap: calc(1.25rem + 0.625 * (100vw - 30rem) / 18);
   }
 }
