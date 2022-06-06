@@ -761,7 +761,7 @@ body::after {
 
 .top__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -851,12 +851,12 @@ body::after {
 }
 
 .top__image-ibg {
-  width: 77.8472222222%;
-  padding-bottom: 41.3194444444%;
+  width: 53.4722222222%;
+  padding-bottom: 42.3611111111%;
 }
 
 .top__image-ibg img {
-  border-radius: 24% 0% 24% 64%/24% 0% 13% 60%;
+  border-radius: 30% 0% 45% 74%/40% 0% 100% 70%;
   -o-object-position: left;
      object-position: left;
 }
