@@ -1651,6 +1651,10 @@ body::after {
   background-color: #04134e;
 }
 
+.ask__button[type=submit] {
+  font-weight: 600;
+}
+
 .swiper {
   overflow: hidden;
 }
