@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220606090758">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220606095929">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 						<ul class="menu__list">
 							<li class="menu__item"><a data-goto=".wrapper" href="#" class="menu__link">Home</a></li>
 							<li class="menu__item"><a data-goto-header="80" data-goto=".page__about" href="#" class="menu__link">About us</a></li>
-							<li class="menu__item"><a data-goto-header="80" data-goto="#" href="#" class="menu__link">Quiz</a></li>
+							<li class="menu__item"><a data-goto-header="80" data-goto=".page__quiz" href="#" class="menu__link">Quiz</a></li>
 							<li class="menu__item"><a data-goto-header="80" data-goto=".page__comments" href="#" class="menu__link">Feedbacks</a></li>
 							<li class="menu__item"><a data-goto-header="80" data-goto=".footer" href="#" class="menu__link">Bio (footer)</a></li>
 							<li class="menu__item"><a data-goto-header="80" data-goto=".page__contact" href="#" class="menu__link menu__link_darkblue">Contact us</a></li>
@@ -97,7 +97,7 @@
 							<button type="button" class="swiper-button-next"></button>
 						</div>
 						<!-- Двигающееся часть слайдера -->
-						<form action="" method="post" class="quiz__wrapper swiper-wrapper">
+						<form data-dev data-popup-message="#submit-form" action="" method="post" class="quiz__wrapper swiper-wrapper">
 							<!-- Слайд -->
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
@@ -120,10 +120,7 @@
 											<input hidden id="degree_4" class="ask__checkbox options__input" type="radio" value="4" name="degree">
 											<label for="degree_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
 										</div>
-
 									</div>
-
-
 									<!-- <div class="ask__buttons">
 											<div class="ask__item"><button type="submit" class="ask__button">Professional junior bachelor</button></div>
 											<div class="ask__item"><button type="submit" class="ask__button">Junior Bachelor</button></div>
@@ -135,7 +132,7 @@
 
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
-									<h3 class="ask__title">Ask</h3>
+									<h3 class="ask__title">Lorem ipsum dolor sit amet consectetur.</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
 											<input hidden id="ask_1" class="ask__checkbox options__input" type="radio" value="1" name="Ask">
@@ -159,11 +156,11 @@
 										</div>
 										<div class="ask__item options__item">
 											<input hidden id="ask_6" class="ask__checkbox options__input" type="radio" value="6" name="Ask">
-											<label for="ask_6" class="ask__label options__label"><span class="ask__text options__text">Lorem</span></label>
+											<label for="ask_6" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>
 										</div>
 										<div class="ask__item options__item">
 											<input hidden id="ask_7" class="ask__checkbox options__input" type="radio" value="7" name="Ask">
-											<label for="ask_7" class="ask__label options__label"><span class="ask__text options__text">Hello man</span></label>
+											<label for="ask_7" class="ask__label options__label"><span class="ask__text options__text">Answer</span></label>
 										</div>
 										<!-- <div class="ask__item options__item">
 												<input hidden id="ask_8" class="ask__checkbox options__input" type="radio" value="8" name="Ask">
@@ -171,36 +168,26 @@
 											</div> -->
 									</div>
 								</div>
+
+
 							</article>
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
-									<h3 class="ask__title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, non.lorem</h3>
+									<h3 class="ask__title">Thanks, you passed the test <br> Submit your result?</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="lorem_1" class="ask__checkbox options__input" type="radio" value="1" name="lorem">
-											<label for="lorem_1" class="ask__label options__label"><span class="ask__text options__text">Professional junior bachelor</span></label>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="lorem_2" class="ask__checkbox options__input" type="radio" value="2" name="lorem">
-											<label for="lorem_2" class="ask__label options__label"><span class="ask__text options__text">Junior Bachelor</span></label>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="lorem_3" class="ask__checkbox options__input" type="radio" value="3" name="lorem">
-											<label for="lorem_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="lorem_4" class="ask__checkbox options__input" type="radio" value="4" name="lorem">
-											<label for="lorem_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
-										</div>
+											<button type="submit" class="ask__button">Submit</button>
 
-										<!-- <div class="ask__item options__item">
-												<input hidden id="ask_8" class="ask__checkbox options__input" type="radio" value="8" name="Ask">
-												<label for="ask_8" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
-											</div> -->
+										</div>
+										<div class="ask__item options__item">
+											<button type="reset" class="ask__button">Reset</button>
+
+											<!-- <input hidden id="lorem_2" class="ask__checkbox options__input" type="radio" value="2" name="lorem"> -->
+											<!-- <label for="lorem_2" class="ask__label options__label"><span class="ask__text options__text">Reset</span></label> -->
+										</div>
 									</div>
 								</div>
 							</article>
-
 						</form>
 
 
@@ -324,7 +311,7 @@
 
 	<!-- ======================================================================================================================================================== -->
 
-	<script src="js/app.min.js?_v=20220606090758"></script>
+	<script src="js/app.min.js?_v=20220606095929"></script>
 </body>
 
 </html>

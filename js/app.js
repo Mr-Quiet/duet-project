@@ -4204,6 +4204,14 @@
             video.pause();
         }
         if (target.closest(".ask__label")) addBulletActiveClass();
+        if (target.closest(".ask__button")) {
+            const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+            bullets.forEach((bullet => {
+                bullet.classList.remove("_active");
+            }));
+            const swiper = document.querySelector(".quiz__slider").swiper;
+            swiper.slideTo(0);
+        }
     }));
     function addBulletActiveClass() {
         const buttons = document.querySelector(".ask__buttons").children;

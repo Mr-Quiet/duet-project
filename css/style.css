@@ -1616,7 +1616,8 @@ body::after {
   background-color: #04134e;
 }
 
-.ask__label {
+.ask__label,
+.ask__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1641,7 +1642,8 @@ body::after {
   transition: all 0.3s ease 0s;
 }
 
-.ask__label._active-button {
+.ask__label._active-button,
+.ask__button._active-button {
   color: #fff;
   background-color: #04134e;
 }
@@ -1947,7 +1949,8 @@ body::after {
     padding-bottom: 6.25rem;
   }
 
-  .ask__label {
+  .ask__label,
+  .ask__button {
     padding: 1.875rem 1.25rem;
   }
 }
@@ -1986,7 +1989,8 @@ body::after {
     grid-column: span 2;
   }
 
-  .ask__label {
+  .ask__label,
+  .ask__button {
     padding: 0.9375rem 1.25rem;
   }
 }
@@ -2028,7 +2032,8 @@ body::after {
             transform: scale(1.1);
   }
 
-  .ask__label:hover {
+  .ask__label:hover,
+  .ask__button:hover {
     color: #fff;
     background-color: #04134e;
   }
