@@ -580,7 +580,7 @@ body::after {
 
 .menu__link {
   line-height: 230%;
-  color: #fff;
+  color: #000;
   padding: 0.625rem 0.8125rem;
   border-radius: 0.1875rem;
   position: relative;
@@ -1869,6 +1869,12 @@ body::after {
 
   .menu__link {
     font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .menu__link_darkblue {
+    color: #00afb9;
+    background-color: #fff;
   }
 
   .icon-menu {
