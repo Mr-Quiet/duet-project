@@ -762,6 +762,7 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .top__content {
@@ -834,7 +835,7 @@ body::after {
 .top__info {
   font-weight: 600;
   line-height: 136%;
-  color: #707070;
+  color: #04134e;
   max-width: 36.25rem;
 }
 
@@ -856,14 +857,28 @@ body::after {
 }
 
 .top__image-ibg {
-  width: 53.4722222222%;
-  padding-bottom: 42.3611111111%;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  width: 62.4060150376%;
+  opacity: 0.7;
+}
+
+@supports (padding-bottom: clamp( 25.625rem , 7.0614640884rem  +  38.6740331492vw , 34.375rem )) {
+  .top__image-ibg {
+    padding-bottom: clamp( 25.625rem , 7.0614640884rem  +  38.6740331492vw , 34.375rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 25.625rem , 7.0614640884rem  +  38.6740331492vw , 34.375rem )) {
+  .top__image-ibg {
+    padding-bottom: calc(25.625rem + 8.75 * (100vw - 48rem) / 22.625);
+  }
 }
 
 .top__image-ibg img {
-  border-radius: 30% 0% 45% 74%/40% 0% 100% 70%;
-  -o-object-position: right;
-     object-position: right;
+  -o-object-position: left;
+     object-position: left;
 }
 
 .about-university__content {
@@ -1312,12 +1327,6 @@ body::after {
   min-height: 5.625rem;
 }
 
-.contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 @supports (padding-top: clamp( 1.875rem , -2.3954626335rem  +  8.896797153vw , 5rem )) {
   .contact {
     padding-top: clamp( 1.875rem , -2.3954626335rem  +  8.896797153vw , 5rem );
@@ -1340,6 +1349,19 @@ body::after {
   .contact {
     padding-bottom: calc(1.875rem + 3.125 * (100vw - 48rem) / 35.125);
   }
+}
+
+.contact__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact__image-ibg {
+  padding-bottom: 52.6315789474%;
 }
 
 @supports (padding-right: clamp( 0.9375rem , -0.8272058824rem  +  5.8823529412vw , 4.0625rem )) {
@@ -1739,14 +1761,14 @@ body::after {
 
   .contact__image-ibg {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
+        -ms-flex: 0 1 47%;
+            flex: 0 1 47%;
   }
 
   .contact__content {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
+        -ms-flex: 0 1 53%;
+            flex: 0 1 53%;
   }
 }
 
@@ -1809,10 +1831,6 @@ body::after {
 
   .top__title {
     line-height: 124%;
-  }
-
-  .top__image-ibg {
-    display: none;
   }
 
   .contact__image-ibg {

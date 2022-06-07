@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220606231720">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220607233653">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,9 +41,8 @@
 						<p class="top__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
 						<button data-goto-header="80" data-goto=".page__quiz" type="button" class="top__button button">Take a survey</button>
 					</div>
-					<div class="top__image-ibg"><picture><source srcset="img/top/duet-team2.webp" type="image/webp"><img src="img/top/duet-team2.jpg" alt="Фото"></picture></div>
+					<div class="top__image-ibg"><img src="img/top/bg-decor2.svg" alt="Фото"></div>
 				</div>
-
 			</section>
 			<section class="page__about about-university">
 				<div class="about-university__content">
@@ -61,7 +60,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="about-university__info info-university">
 					<div class="info-university__body">
 						<article class="info-university__column">
@@ -96,13 +94,10 @@
 							<button type="button" class="swiper-button-prev"></button>
 							<button type="button" class="swiper-button-next"></button>
 						</div>
-						<!-- Двигающееся часть слайдера -->
 						<form data-dev data-popup-message="#submit-form" action="" method="post" class="quiz__wrapper swiper-wrapper">
-							<!-- Слайд -->
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
 									<h3 class="ask__title">Choose your degree</h3>
-
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
 											<input hidden id="degree_1" class="ask__checkbox options__input" type="radio" value="1" name="degree">
@@ -121,16 +116,8 @@
 											<label for="degree_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
 										</div>
 									</div>
-									<!-- <div class="ask__buttons">
-											<div class="ask__item"><button type="submit" class="ask__button">Professional junior bachelor</button></div>
-											<div class="ask__item"><button type="submit" class="ask__button">Junior Bachelor</button></div>
-											<div class="ask__item"><button type="submit" class="ask__button">Bachelor</button></div>
-											<div class="ask__item"><button type="submit" class="ask__button">Master</button></div>
-										</div> -->
 								</div>
 							</article>
-
-
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
 									<h3 class="ask__title">Lorem ipsum dolor sit amet consectetur.</h3>
@@ -163,35 +150,23 @@
 											<input hidden id="ask_7" class="ask__checkbox options__input" type="radio" value="7" name="Ask">
 											<label for="ask_7" class="ask__label options__label"><span class="ask__text options__text">Answer</span></label>
 										</div>
-										<!-- <div class="ask__item options__item">
-												<input hidden id="ask_8" class="ask__checkbox options__input" type="radio" value="8" name="Ask">
-												<label for="ask_8" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
-											</div> -->
 									</div>
 								</div>
-
-
 							</article>
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
 									<h3 class="ask__title">Thanks, you passed the test <br> Submit your result?</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-
 											<button type="reset" class="ask__button">Reset</button>
 										</div>
 										<div class="ask__item options__item">
 											<button type="submit" class="ask__button">Submit</button>
-
-											<!-- <input hidden id="lorem_2" class="ask__checkbox options__input" type="radio" value="2" name="lorem"> -->
-											<!-- <label for="lorem_2" class="ask__label options__label"><span class="ask__text options__text">Reset</span></label> -->
 										</div>
 									</div>
 								</div>
 							</article>
 						</form>
-
-
 					</div>
 				</div>
 			</section>
@@ -227,29 +202,29 @@
 				</div>
 			</section>
 			<section class="page__contact contact">
-				<div class="contact__image-ibg"><picture><source srcset="img/contact/duet.webp" type="image/webp"><img src="img/contact/duet.jpg" alt="Учебный корпус"></picture></div>
-				<div class="contact__content">
-					<div class="contact__header">
-						<h2 class="contact__title">Contact Us</h2>
-						<p class="contact__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+				<div class="contact__container">
+					<div class="contact__image-ibg"><img src="img/contact/contact.svg" alt="Картинка"></div>
+					<div class="contact__content">
+						<div class="contact__header">
+							<h2 class="contact__title">Contact Us</h2>
+							<p class="contact__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+						</div>
+						<form data-dev data-popup-message="#submit-form" class="contact__form" action="" method="post">
+							<div class="contact__input contact__input_name">
+								<label for="input-name">Name</label>
+								<input data-required autocomplete="off" id="input-name" type="text" name="form[]" data-error="Enter your name" placeholder="Ivan Ivanov" class="input">
+							</div>
+							<div class="contact__input contact__input_email">
+								<label for="input-email">Email</label>
+								<input data-required="email" autocomplete="off" id="input-email" type="email" name="form[]" data-error="Please enter correct email" placeholder="example@gmail.com" class="input">
+							</div>
+							<div class="contact__input contact__input_phone">
+								<label for="input-phone">Phone</label>
+								<input data-required autocomplete="off" id="input-phone" type="tel" name="form[]" data-error="Please enter correct phone" placeholder="+380123456789" class="input">
+							</div>
+							<button type="submit" class="contact__button button">Get in touch</button>
+						</form>
 					</div>
-					<!-- <div class="contact__body"> -->
-					<form data-dev data-popup-message="#submit-form" class="contact__form" action="" method="post">
-						<div class="contact__input contact__input_name">
-							<label for="input-name">Name</label>
-							<input data-required autocomplete="off" id="input-name" type="text" name="form[]" data-error="Enter your name" placeholder="Ivan Ivanov" class="input">
-						</div>
-						<div class="contact__input contact__input_email">
-							<label for="input-email">Email</label>
-							<input data-required="email" autocomplete="off" id="input-email" type="email" name="form[]" data-error="Please enter correct email" placeholder="example@gmail.com" class="input">
-						</div>
-						<div class="contact__input contact__input_phone">
-							<label for="input-phone">Phone</label>
-							<input data-required autocomplete="off" id="input-phone" type="tel" name="form[]" data-error="Please enter correct phone" placeholder="+380123456789" class="input">
-						</div>
-						<button type="submit" class="contact__button button">Get in touch</button>
-					</form>
-					<!-- </div> -->
 				</div>
 			</section>
 		</main>
@@ -312,7 +287,7 @@
 
 	<!-- ======================================================================================================================================================== -->
 
-	<script src="js/app.min.js?_v=20220606231720"></script>
+	<script src="js/app.min.js?_v=20220607233653"></script>
 </body>
 
 </html>
