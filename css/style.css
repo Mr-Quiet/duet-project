@@ -1667,6 +1667,13 @@ body::after {
   background-color: #04134e;
 }
 
+.ask__label._active-button + .ask__button-tippy,
+.ask__button._active-button + .ask__button-tippy {
+  color: #fff;
+  -webkit-box-shadow: 0 0 2px #fff;
+          box-shadow: 0 0 2px #fff;
+}
+
 .ask__button[type=submit] {
   font-weight: 600;
 }
