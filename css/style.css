@@ -10,7 +10,7 @@
   font-style: normal;
 }
 
-.swiper-pagination .swiper-pagination-bullet._active::before,
+.control-quiz__bullet._active::before,
 [class*=_icon-]:before {
   font-family: "icons";
   font-style: normal;
@@ -27,7 +27,7 @@
 }
 
 ._icon-check:before,
-.swiper-pagination .swiper-pagination-bullet._active:before {
+.control-quiz__bullet._active:before {
   content: "\e900";
 }
 
@@ -1143,8 +1143,8 @@ body::after {
 .slide-comments__card {
   position: relative;
   border-radius: 0.9375rem;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1163,27 +1163,27 @@ body::after {
   transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
 }
 
-@supports (padding-right: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem )) {
+@supports (padding-right: clamp( 0.625rem , -0.0808823529rem  +  2.3529411765vw , 1.875rem )) {
   .slide-comments__card {
-    padding-right: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem );
+    padding-right: clamp( 0.625rem , -0.0808823529rem  +  2.3529411765vw , 1.875rem );
   }
 }
 
-@supports not (padding-right: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem )) {
+@supports not (padding-right: clamp( 0.625rem , -0.0808823529rem  +  2.3529411765vw , 1.875rem )) {
   .slide-comments__card {
-    padding-right: calc(0.625rem + 5.625 * (100vw - 30rem) / 53.125);
+    padding-right: calc(0.625rem + 1.25 * (100vw - 30rem) / 53.125);
   }
 }
 
-@supports (padding-left: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem )) {
+@supports (padding-left: clamp( 0.625rem , -0.0808823529rem  +  2.3529411765vw , 1.875rem )) {
   .slide-comments__card {
-    padding-left: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem );
+    padding-left: clamp( 0.625rem , -0.0808823529rem  +  2.3529411765vw , 1.875rem );
   }
 }
 
-@supports not (padding-left: clamp( 0.625rem , -2.5514705882rem  +  10.5882352941vw , 6.25rem )) {
+@supports not (padding-left: clamp( 0.625rem , -0.0808823529rem  +  2.3529411765vw , 1.875rem )) {
   .slide-comments__card {
-    padding-left: calc(0.625rem + 5.625 * (100vw - 30rem) / 53.125);
+    padding-left: calc(0.625rem + 1.25 * (100vw - 30rem) / 53.125);
   }
 }
 
@@ -1199,15 +1199,15 @@ body::after {
   }
 }
 
-@supports (padding-top: clamp( 1.875rem , 0.9821428571rem  +  4.4642857143vw , 3.125rem )) {
+@supports (padding-top: clamp( 1.875rem , 1.4285714286rem  +  2.2321428571vw , 2.5rem )) {
   .slide-comments__card {
-    padding-top: clamp( 1.875rem , 0.9821428571rem  +  4.4642857143vw , 3.125rem );
+    padding-top: clamp( 1.875rem , 1.4285714286rem  +  2.2321428571vw , 2.5rem );
   }
 }
 
-@supports not (padding-top: clamp( 1.875rem , 0.9821428571rem  +  4.4642857143vw , 3.125rem )) {
+@supports not (padding-top: clamp( 1.875rem , 1.4285714286rem  +  2.2321428571vw , 2.5rem )) {
   .slide-comments__card {
-    padding-top: calc(1.875rem + 1.25 * (100vw - 20rem) / 28);
+    padding-top: calc(1.875rem + 0.625 * (100vw - 20rem) / 28);
   }
 }
 
@@ -1222,15 +1222,15 @@ body::after {
   transition: opacity 0.3s ease 0s;
 }
 
-@supports (font-size: clamp( 3.125rem , 0.1547029703rem  +  14.8514851485vw , 12.5rem )) {
+@supports (font-size: clamp( 3.125rem , 2.1349009901rem  +  4.9504950495vw , 6.25rem )) {
   .slide-comments__card::before {
-    font-size: clamp( 3.125rem , 0.1547029703rem  +  14.8514851485vw , 12.5rem );
+    font-size: clamp( 3.125rem , 2.1349009901rem  +  4.9504950495vw , 6.25rem );
   }
 }
 
-@supports not (font-size: clamp( 3.125rem , 0.1547029703rem  +  14.8514851485vw , 12.5rem )) {
+@supports not (font-size: clamp( 3.125rem , 2.1349009901rem  +  4.9504950495vw , 6.25rem )) {
   .slide-comments__card::before {
-    font-size: calc(3.125rem + 9.375 * (100vw - 20rem) / 63.125);
+    font-size: calc(3.125rem + 3.125 * (100vw - 20rem) / 63.125);
   }
 }
 
@@ -1238,6 +1238,8 @@ body::after {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .swiper-slide-active .slide-comments__card::before {
@@ -1505,22 +1507,21 @@ body::after {
   padding: 0.625rem 0.0625rem;
 }
 
-.swiper-pagination {
+.control-quiz__slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 0.9375rem;
-     -moz-column-gap: 0.9375rem;
-          column-gap: 0.9375rem;
-  padding-top: 0.9375rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 100%;
-          flex: 0 1 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 2.5rem;
 }
 
-.swiper-pagination .swiper-pagination-bullet {
+.control-quiz__bullet {
   background-color: #707070;
-  width: 100%;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 100%;
           flex: 0 1 100%;
@@ -1528,7 +1529,16 @@ body::after {
   position: relative;
 }
 
-.swiper-pagination .swiper-pagination-bullet::after {
+.swiper-slide-active .control-quiz__bullet {
+  background-color: #0081a7;
+}
+
+.swiper-slide-active .control-quiz__bullet::after {
+  content: "?";
+  background-color: #0081a7;
+}
+
+.control-quiz__bullet::after {
   content: "?";
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1557,16 +1567,16 @@ body::after {
   transition: all 0.3s ease 0s;
 }
 
-.swiper-pagination .swiper-pagination-bullet._active {
+.control-quiz__bullet._active {
   background-color: #00A789;
 }
 
-.swiper-pagination .swiper-pagination-bullet._active::after {
+.control-quiz__bullet._active::after {
   content: "";
   background-color: #00A789;
 }
 
-.swiper-pagination .swiper-pagination-bullet._active::before {
+.control-quiz__bullet._active::before {
   position: absolute;
   top: 0;
   left: 50%;
@@ -1576,15 +1586,6 @@ body::after {
           transform: translate(-50%, -50%);
   color: #fff;
   font-size: 1.375rem;
-}
-
-.swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #0081a7;
-}
-
-.swiper-pagination .swiper-pagination-bullet-active::after {
-  content: "?";
-  background-color: #0081a7;
 }
 
 .ask__title {

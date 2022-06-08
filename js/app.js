@@ -6210,7 +6210,7 @@
                 modules: [ Autoplay ],
                 observer: true,
                 observeParents: true,
-                slidesPerView: 1.2,
+                slidesPerView: 3,
                 autoHeight: false,
                 speed: 800,
                 spaceBetween: 10,
@@ -6225,17 +6225,27 @@
                         slidesPerView: 1.4,
                         spaceBetween: 10
                     },
-                    768: {
-                        spaceBetween: 30
-                    },
                     992: {
-                        slidesPerView: 1.7,
-                        spaceBetween: 80
+                        spaceBetween: 15,
+                        slidesPerView: 3
                     },
-                    1024: {
-                        slidesPerView: 1.8
-                    }
+                    1024: {}
                 },
+                on: {}
+            });
+        }
+        if (document.querySelector(".control-quiz__slider")) {
+            new core(".control-quiz__slider", {
+                modules: [],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 3,
+                speed: 700,
+                spaceBetween: 30,
+                autoHeight: false,
+                centeredSlides: true,
+                touchRatio: 0,
+                simulateTouch: false,
                 on: {}
             });
         }
@@ -6338,38 +6348,34 @@
             }));
         }
     }), 0);
+    const video = document.querySelector(".about-university__video");
     addButtonsClass();
     document.addEventListener("click", (function(e) {
         const target = e.target;
-        const video = document.querySelector(".about-university__video");
         if (target.closest(".about-university__button")) {
             document.documentElement.classList.add("_active-video");
             video.play();
         }
         if (target.closest(".ask__label")) addBulletActiveClass();
         if (target.closest(".ask__button")) {
-            const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+            const bullets = document.querySelectorAll(".control-quiz__bullet");
             bullets.forEach((bullet => {
                 bullet.classList.remove("_active");
             }));
-            const swiper = document.querySelector(".quiz__slider").swiper;
-            swiper.slideTo(0);
+            const quizSlider = document.querySelector(".quiz__slider").swiper;
+            quizSlider.slideTo(0);
+            const quizControl = document.querySelector(".control-quiz__slider").swiper;
+            quizControl.slideTo(0);
         }
         if (target.closest(".ask__button-tippy")) e.preventDefault();
     }));
     function addBulletActiveClass() {
-        const buttons = document.querySelector(".ask__buttons").children;
-        const bullet = document.querySelector(".swiper-pagination-bullet-active");
-        for (let i = 0; i < buttons.length; i++) {
-            const checkbox = buttons[i];
-            setTimeout((() => {
-                if (checkbox.children[0].checked) {
-                    bullet.classList.add("_active");
-                    const swiper = document.querySelector(".quiz__slider").swiper;
-                    swiper.slideNext();
-                }
-            }), 100);
-        }
+        const quizControl = document.querySelector(".control-quiz__slider").swiper;
+        quizControl.slideNext();
+        const activeSlideControl = document.querySelector(".swiper-slide-prev");
+        activeSlideControl.children[0].classList.add("_active");
+        const quizSlider = document.querySelector(".quiz__slider").swiper;
+        quizSlider.slideNext();
     }
     function addButtonsClass() {
         const buttons = document.querySelectorAll(".ask__buttons");
