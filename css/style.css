@@ -857,26 +857,17 @@ body::after {
 
 .top__image-ibg {
   position: absolute;
-  right: 15px;
+  right: 0;
   top: 0;
-  width: 62.4060150376%;
-}
-
-@supports (padding-bottom: clamp( 26.25rem , 21.1730769231rem  +  16.9230769231vw , 33.125rem )) {
-  .top__image-ibg {
-    padding-bottom: clamp( 26.25rem , 21.1730769231rem  +  16.9230769231vw , 33.125rem );
-  }
-}
-
-@supports not (padding-bottom: clamp( 26.25rem , 21.1730769231rem  +  16.9230769231vw , 33.125rem )) {
-  .top__image-ibg {
-    padding-bottom: calc(26.25rem + 6.875 * (100vw - 30rem) / 40.625);
-  }
+  width: 53.125rem;
+  height: 32.5rem;
 }
 
 .top__image-ibg img {
-  -o-object-position: left;
-     object-position: left;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: right;
+     object-position: right;
   opacity: 0.7;
 }
 
