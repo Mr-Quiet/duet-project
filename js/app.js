@@ -6245,7 +6245,7 @@
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
-                speed: 800,
+                speed: 700,
                 spaceBetween: 30,
                 autoHeight: true,
                 touchRatio: 0,

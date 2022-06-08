@@ -1635,6 +1635,12 @@ body::after {
   background-color: #04134e;
 }
 
+.ask__checkbox:checked + .ask__label + .ask__button-tippy {
+  color: #fff;
+  -webkit-box-shadow: 0 0 2px #fff;
+          box-shadow: 0 0 2px #fff;
+}
+
 .ask__label,
 .ask__button {
   display: -webkit-box;
@@ -1659,19 +1665,6 @@ body::after {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-}
-
-.ask__label._active-button,
-.ask__button._active-button {
-  color: #fff;
-  background-color: #04134e;
-}
-
-.ask__label._active-button + .ask__button-tippy,
-.ask__button._active-button + .ask__button-tippy {
-  color: #fff;
-  -webkit-box-shadow: 0 0 2px #fff;
-          box-shadow: 0 0 2px #fff;
 }
 
 .ask__button[type=submit] {
