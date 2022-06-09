@@ -903,10 +903,6 @@ body::after {
           align-items: center;
 }
 
-.about-university__video {
-  border-radius: 3.125rem 3.125rem 3.125rem 3.125rem;
-}
-
 @supports (max-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem )) {
   .about-university__video {
     max-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem );
@@ -916,6 +912,18 @@ body::after {
 @supports not (max-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem )) {
   .about-university__video {
     max-height: calc(10.625rem + 26.875 * (100vw - 20rem) / 51.875);
+  }
+}
+
+@supports (border-radius: clamp( 1.25rem , 0.3571428571rem  +  4.4642857143vw , 3.125rem )) {
+  .about-university__video {
+    border-radius: clamp( 1.25rem , 0.3571428571rem  +  4.4642857143vw , 3.125rem );
+  }
+}
+
+@supports not (border-radius: clamp( 1.25rem , 0.3571428571rem  +  4.4642857143vw , 3.125rem )) {
+  .about-university__video {
+    border-radius: calc(1.25rem + 1.875 * (100vw - 20rem) / 42);
   }
 }
 
