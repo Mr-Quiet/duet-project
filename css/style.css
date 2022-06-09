@@ -874,22 +874,13 @@ body::after {
 .about-university__content {
   position: relative;
   background-color: #04134e;
-  text-align: center;
-}
-
-@supports (min-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem )) {
-  .about-university__content {
-    min-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem );
-  }
-}
-
-@supports not (min-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem )) {
-  .about-university__content {
-    min-height: calc(10.625rem + 26.875 * (100vw - 20rem) / 51.875);
-  }
+  display: -ms-grid;
+  display: grid;
 }
 
 .about-university__video {
+  -ms-grid-column-align: center;
+      justify-self: center;
   height: 100%;
 }
 
