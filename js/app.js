@@ -6465,13 +6465,13 @@
             document.documentElement.classList.add("_active-video");
             video.play();
         }
-        if (target.closest('.ask__label[for="education-2"]')) script_removeSlide(3);
-        if (target.closest(".ask__label")) addBulletActiveClass();
+        if (target.closest('.ask__label[for="education-2"]')) {
+            script_removeSlide(3);
+            addButtonsClass();
+        }
+        if (target.closest(".ask__label")) script_slideNext();
         if (target.closest(".ask__button")) {
-            const bullets = document.querySelectorAll(".control-quiz__bullet");
-            bullets.forEach((bullet => {
-                bullet.classList.remove("_active");
-            }));
+            numberOfQuestions();
             const quizSlider = document.querySelector(".quiz__slider").swiper;
             quizSlider.slideTo(0);
             script_addSlide(questions.speciality.position, questions.speciality.ask, questions.speciality.dataAttr);
@@ -6493,13 +6493,12 @@
             addButtonsClass();
         }
     }
-    function addBulletActiveClass() {
+    function script_slideNext() {
         const quizControl = document.querySelector(".control-quiz__slider").swiper;
         quizControl.slideNext();
-        const activeSlideControl = document.querySelector(".swiper-slide-prev");
-        activeSlideControl.children[0].classList.add("_active");
         const quizSlider = document.querySelector(".quiz__slider").swiper;
         quizSlider.slideNext();
+        addBulletActiveClass();
     }
     function addButtonsClass() {
         const buttons = document.querySelectorAll(".ask__buttons");
@@ -6522,6 +6521,10 @@
         quizSlides.forEach(((quizSlide, i) => {
             quizControl.innerHTML += `\n\t\t<div class="control-quiz__slide swiper-slide">\n\t\t\t\t<div class="control-quiz__bullet"><span class="control-quiz__number">${i + 1}</span></div>\n\t\t</div>\n\t\t`;
         }));
+    }
+    function addBulletActiveClass() {
+        const activeSlideControl = document.querySelector(".swiper-slide-prev");
+        activeSlideControl.classList.add("_prev");
     }
     window["FLS"] = false;
     isWebp();

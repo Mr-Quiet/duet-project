@@ -10,7 +10,8 @@
   font-style: normal;
 }
 
-.control-quiz__bullet._active::before,
+.swiper-slide-prev .control-quiz__bullet::before,
+._prev .control-quiz__bullet::before,
 [class*=_icon-]:before {
   font-family: "icons";
   font-style: normal;
@@ -27,7 +28,8 @@
 }
 
 ._icon-check:before,
-.control-quiz__bullet._active:before {
+.swiper-slide-prev .control-quiz__bullet:before,
+._prev .control-quiz__bullet:before {
   content: "\e900";
 }
 
@@ -1548,6 +1550,37 @@ body::after {
   background-color: #0081a7;
 }
 
+.swiper-slide-prev .control-quiz__bullet,
+._prev .control-quiz__bullet {
+  background-color: #00A789;
+}
+
+.swiper-slide-prev .control-quiz__bullet::after,
+._prev .control-quiz__bullet::after {
+  content: "";
+  background-color: #00A789;
+}
+
+.swiper-slide-prev .control-quiz__bullet::before,
+._prev .control-quiz__bullet::before {
+  position: absolute;
+  top: 1px;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.375rem;
+}
+
+.swiper-slide-prev .control-quiz__bullet .control-quiz__number,
+._prev .control-quiz__bullet .control-quiz__number {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
 .control-quiz__bullet::after {
   content: "";
   width: 1.875rem;
@@ -1565,27 +1598,6 @@ body::after {
   transition: all 0.3s ease 0s;
 }
 
-.control-quiz__bullet._active {
-  background-color: #00A789;
-}
-
-.control-quiz__bullet._active::after {
-  content: "";
-  background-color: #00A789;
-}
-
-.control-quiz__bullet._active::before {
-  position: absolute;
-  top: 1px;
-  left: 50%;
-  z-index: 2;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 1.375rem;
-}
-
 .control-quiz__number {
   position: absolute;
   top: 0;
@@ -1597,12 +1609,6 @@ body::after {
   color: #fff;
   font-weight: 600;
   font-size: 1.125rem;
-}
-
-.control-quiz__bullet._active .control-quiz__number {
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
 }
 
 .ask__title {
