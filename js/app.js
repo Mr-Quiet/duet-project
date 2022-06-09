@@ -6203,6 +6203,107 @@
             stop
         });
     }
+    function appendSlide(slides) {
+        const swiper = this;
+        const {$wrapperEl, params} = swiper;
+        if (params.loop) swiper.loopDestroy();
+        if ("object" === typeof slides && "length" in slides) {
+            for (let i = 0; i < slides.length; i += 1) if (slides[i]) $wrapperEl.append(slides[i]);
+        } else $wrapperEl.append(slides);
+        if (params.loop) swiper.loopCreate();
+        if (!params.observer) swiper.update();
+    }
+    function prependSlide(slides) {
+        const swiper = this;
+        const {params, $wrapperEl, activeIndex} = swiper;
+        if (params.loop) swiper.loopDestroy();
+        let newActiveIndex = activeIndex + 1;
+        if ("object" === typeof slides && "length" in slides) {
+            for (let i = 0; i < slides.length; i += 1) if (slides[i]) $wrapperEl.prepend(slides[i]);
+            newActiveIndex = activeIndex + slides.length;
+        } else $wrapperEl.prepend(slides);
+        if (params.loop) swiper.loopCreate();
+        if (!params.observer) swiper.update();
+        swiper.slideTo(newActiveIndex, 0, false);
+    }
+    function addSlide(index, slides) {
+        const swiper = this;
+        const {$wrapperEl, params, activeIndex} = swiper;
+        let activeIndexBuffer = activeIndex;
+        if (params.loop) {
+            activeIndexBuffer -= swiper.loopedSlides;
+            swiper.loopDestroy();
+            swiper.slides = $wrapperEl.children(`.${params.slideClass}`);
+        }
+        const baseLength = swiper.slides.length;
+        if (index <= 0) {
+            swiper.prependSlide(slides);
+            return;
+        }
+        if (index >= baseLength) {
+            swiper.appendSlide(slides);
+            return;
+        }
+        let newActiveIndex = activeIndexBuffer > index ? activeIndexBuffer + 1 : activeIndexBuffer;
+        const slidesBuffer = [];
+        for (let i = baseLength - 1; i >= index; i -= 1) {
+            const currentSlide = swiper.slides.eq(i);
+            currentSlide.remove();
+            slidesBuffer.unshift(currentSlide);
+        }
+        if ("object" === typeof slides && "length" in slides) {
+            for (let i = 0; i < slides.length; i += 1) if (slides[i]) $wrapperEl.append(slides[i]);
+            newActiveIndex = activeIndexBuffer > index ? activeIndexBuffer + slides.length : activeIndexBuffer;
+        } else $wrapperEl.append(slides);
+        for (let i = 0; i < slidesBuffer.length; i += 1) $wrapperEl.append(slidesBuffer[i]);
+        if (params.loop) swiper.loopCreate();
+        if (!params.observer) swiper.update();
+        if (params.loop) swiper.slideTo(newActiveIndex + swiper.loopedSlides, 0, false); else swiper.slideTo(newActiveIndex, 0, false);
+    }
+    function removeSlide(slidesIndexes) {
+        const swiper = this;
+        const {params, $wrapperEl, activeIndex} = swiper;
+        let activeIndexBuffer = activeIndex;
+        if (params.loop) {
+            activeIndexBuffer -= swiper.loopedSlides;
+            swiper.loopDestroy();
+            swiper.slides = $wrapperEl.children(`.${params.slideClass}`);
+        }
+        let newActiveIndex = activeIndexBuffer;
+        let indexToRemove;
+        if ("object" === typeof slidesIndexes && "length" in slidesIndexes) {
+            for (let i = 0; i < slidesIndexes.length; i += 1) {
+                indexToRemove = slidesIndexes[i];
+                if (swiper.slides[indexToRemove]) swiper.slides.eq(indexToRemove).remove();
+                if (indexToRemove < newActiveIndex) newActiveIndex -= 1;
+            }
+            newActiveIndex = Math.max(newActiveIndex, 0);
+        } else {
+            indexToRemove = slidesIndexes;
+            if (swiper.slides[indexToRemove]) swiper.slides.eq(indexToRemove).remove();
+            if (indexToRemove < newActiveIndex) newActiveIndex -= 1;
+            newActiveIndex = Math.max(newActiveIndex, 0);
+        }
+        if (params.loop) swiper.loopCreate();
+        if (!params.observer) swiper.update();
+        if (params.loop) swiper.slideTo(newActiveIndex + swiper.loopedSlides, 0, false); else swiper.slideTo(newActiveIndex, 0, false);
+    }
+    function removeAllSlides() {
+        const swiper = this;
+        const slidesIndexes = [];
+        for (let i = 0; i < swiper.slides.length; i += 1) slidesIndexes.push(i);
+        swiper.removeSlide(slidesIndexes);
+    }
+    function Manipulation(_ref) {
+        let {swiper} = _ref;
+        Object.assign(swiper, {
+            appendSlide: appendSlide.bind(swiper),
+            prependSlide: prependSlide.bind(swiper),
+            addSlide: addSlide.bind(swiper),
+            removeSlide: removeSlide.bind(swiper),
+            removeAllSlides: removeAllSlides.bind(swiper)
+        });
+    }
     function initSliders() {
         if (document.querySelector(".comments__slider")) {
             new core(".comments__slider", {
@@ -6251,7 +6352,7 @@
         }
         if (document.querySelector(".quiz__slider")) {
             new core(".quiz__slider", {
-                modules: [ Pagination, Navigation ],
+                modules: [ Pagination, Navigation, Manipulation ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
@@ -6268,7 +6369,9 @@
                     prevEl: ".swiper-button-prev",
                     nextEl: ".swiper-button-next"
                 },
-                on: {}
+                on: {
+                    init: function(swiper) {}
+                }
             });
         }
     }
@@ -6348,14 +6451,23 @@
             }));
         }
     }), 0);
+    const questions = {
+        speciality: {
+            position: 3,
+            ask: `\n\t\t\t<article [data-question="speciality"] class="quiz__slide swiper-slide">\n\t\t\t\t<div class="quiz__ask ask">\n\t\t\t\t\t<h3 class="ask__title">Choose your second speciality</h3>\n\t\t\t\t\t<div class="ask__buttons options">\n\t\t\t\t\t\t<div class="ask__item options__item">\n\t\t\t\t\t\t\t<input hidden id="second-speciality-1" class="ask__checkbox options__input" type="radio" value="1" name="second-speciality">\n\t\t\t\t\t\t\t<label for="second-speciality-1" class="ask__label options__label"><span class="ask__text options__text">Professional</span></label>\n\t\t\t\t\t\t\t<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="ask__item options__item">\n\t\t\t\t\t\t\t<input hidden id="second-speciality-2" class="ask__checkbox options__input" type="radio" value="2" name="second-speciality">\n\t\t\t\t\t\t\t<label for="second-speciality-2" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>\n\t\t\t\t\t\t\t<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="ask__item options__item">\n\t\t\t\t\t\t\t<input hidden id="second-speciality-3" class="ask__checkbox options__input" type="radio" value="3" name="second-speciality">\n\t\t\t\t\t\t\t<label for="second-speciality-3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>\n\t\t\t\t\t\t\t<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="ask__item options__item">\n\t\t\t\t\t\t\t<input hidden id="second-speciality-4" class="ask__checkbox options__input" type="radio" value="4" name="second-speciality">\n\t\t\t\t\t\t\t<label for="second-speciality-4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>\n\t\t\t\t\t\t\t<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</article>`,
+            dataAttr: '[data-question="speciality"]'
+        }
+    };
     const video = document.querySelector(".about-university__video");
     addButtonsClass();
+    numberOfQuestions();
     document.addEventListener("click", (function(e) {
         const target = e.target;
         if (target.closest(".about-university__button")) {
             document.documentElement.classList.add("_active-video");
             video.play();
         }
+        if (target.closest('.ask__label[for="education-2"]')) script_removeSlide(3);
         if (target.closest(".ask__label")) addBulletActiveClass();
         if (target.closest(".ask__button")) {
             const bullets = document.querySelectorAll(".control-quiz__bullet");
@@ -6364,11 +6476,25 @@
             }));
             const quizSlider = document.querySelector(".quiz__slider").swiper;
             quizSlider.slideTo(0);
+            script_addSlide(questions.speciality.position, questions.speciality.ask, questions.speciality.dataAttr);
             const quizControl = document.querySelector(".control-quiz__slider").swiper;
             quizControl.slideTo(0);
         }
         if (target.closest(".ask__button-tippy")) e.preventDefault();
     }));
+    function script_removeSlide(index) {
+        const quizSlider = document.querySelector(".quiz__slider").swiper;
+        quizSlider.removeSlide(index);
+        numberOfQuestions();
+    }
+    function script_addSlide(position, question, dataAttr) {
+        if (!document.querySelector(dataAttr)) {
+            const quizSlider = document.querySelector(".quiz__slider").swiper;
+            quizSlider.addSlide(position, question);
+            numberOfQuestions();
+            addButtonsClass();
+        }
+    }
     function addBulletActiveClass() {
         const quizControl = document.querySelector(".control-quiz__slider").swiper;
         quizControl.slideNext();
@@ -6389,6 +6515,14 @@
                 if (!button.classList.contains("ask__buttons_three")) button.classList.add("ask__buttons_three");
                 if (button.children.length % 2) button.children[button.children.length - 1].classList.add("ask__item_span-three");
             }
+        }));
+    }
+    function numberOfQuestions() {
+        const quizSlides = document.querySelectorAll(".quiz__slide");
+        const quizControl = document.querySelector(".control-quiz__wrapper");
+        quizControl.innerHTML = ``;
+        quizSlides.forEach(((quizSlide, i) => {
+            quizControl.innerHTML += `\n\t\t<div class="control-quiz__slide swiper-slide">\n\t\t\t\t<div class="control-quiz__bullet"><span class="control-quiz__number">${i + 1}</span></div>\n\t\t</div>\n\t\t`;
         }));
     }
     window["FLS"] = false;

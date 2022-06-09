@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220608194757">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220609111016">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,27 +91,9 @@
 					<div class="quiz__control control-quiz">
 						<div class="control-quiz__slider swiper">
 							<div class="control-quiz__wrapper swiper-wrapper">
-								<div class="control-quiz__slide swiper-slide">
-									<div class="control-quiz__bullet control-quiz__bullet_active"></div>
-								</div>
-								<div class="control-quiz__slide swiper-slide">
-									<div class="control-quiz__bullet"></div>
-								</div>
-								<div class="control-quiz__slide swiper-slide">
-									<div class="control-quiz__bullet"></div>
-								</div>
-								<div class="control-quiz__slide swiper-slide">
-									<div class="control-quiz__bullet"></div>
-								</div>
-								<div class="control-quiz__slide swiper-slide">
-									<div class="control-quiz__bullet"></div>
-								</div>
-								<div class="control-quiz__slide swiper-slide">
-									<div class="control-quiz__bullet"></div>
-								</div>
-								<div class="control-quiz__slide swiper-slide">
-									<div class="control-quiz__bullet"></div>
-								</div>
+								<!-- <div class="control-quiz__slide swiper-slide">
+										<div class="control-quiz__bullet"><span class="control-quiz__number">1</span></div>
+									</div> -->
 							</div>
 						</div>
 					</div>
@@ -122,65 +104,23 @@
 									<h3 class="ask__title">Choose your degree</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="degree_1" class="ask__checkbox options__input" type="radio" value="1" name="degree">
-											<label for="degree_1" class="ask__label options__label"><span class="ask__text options__text">Professional junior bachelor</span></label>
+											<input hidden id="degree-1" class="ask__checkbox options__input" type="radio" value="1" name="degree">
+											<label for="degree-1" class="ask__label options__label"><span class="ask__text options__text">Professional junior bachelor</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="degree_2" class="ask__checkbox options__input" type="radio" value="2" name="degree">
-											<label for="degree_2" class="ask__label options__label"><span class="ask__text options__text">Junior Bachelor</span></label>
+											<input hidden id="degree-2" class="ask__checkbox options__input" type="radio" value="2" name="degree">
+											<label for="degree-2" class="ask__label options__label"><span class="ask__text options__text">Junior Bachelor</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="degree_3" class="ask__checkbox options__input" type="radio" value="3" name="degree">
-											<label for="degree_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
+											<input hidden id="degree-3" class="ask__checkbox options__input" type="radio" value="3" name="degree">
+											<label for="degree-3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="degree_4" class="ask__checkbox options__input" type="radio" value="4" name="degree">
-											<label for="degree_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="quiz__slide swiper-slide">
-								<div class="quiz__ask ask">
-									<h3 class="ask__title">Lorem ipsum dolor sit amet consectetur?</h3>
-									<div class="ask__buttons options">
-										<div class="ask__item options__item">
-											<input hidden id="ask_1" class="ask__checkbox options__input" type="radio" value="1" name="Ask">
-											<label for="ask_1" class="ask__label options__label"><span class="ask__text options__text">Professional</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_2" class="ask__checkbox options__input" type="radio" value="2" name="Ask">
-											<label for="ask_2" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_3" class="ask__checkbox options__input" type="radio" value="3" name="Ask">
-											<label for="ask_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_4" class="ask__checkbox options__input" type="radio" value="4" name="Ask">
-											<label for="ask_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_5" class="ask__checkbox options__input" type="radio" value="5" name="Ask">
-											<label for="ask_5" class="ask__label options__label"><span class="ask__text options__text">Lorem ipsum</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_6" class="ask__checkbox options__input" type="radio" value="6" name="Ask">
-											<label for="ask_6" class="ask__label options__label"><span class="ask__text options__text">Junior</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_7" class="ask__checkbox options__input" type="radio" value="7" name="Ask">
-											<label for="ask_7" class="ask__label options__label"><span class="ask__text options__text">Deleniti libero</span></label>
+											<input hidden id="degree-4" class="ask__checkbox options__input" type="radio" value="4" name="degree">
+											<label for="degree-4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 									</div>
@@ -188,26 +128,41 @@
 							</article>
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
-									<h3 class="ask__title">Lorem ipsum dolor sit amet consectetur?</h3>
+									<h3 class="ask__title">Choose your speciality</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="ask_1" class="ask__checkbox options__input" type="radio" value="1" name="ask2">
-											<label for="ask_1" class="ask__label options__label"><span class="ask__text options__text">Professional</span></label>
+											<input hidden id="speciality-1" class="ask__checkbox options__input" type="radio" value="1" name="speciality">
+											<label for="speciality-1" class="ask__label options__label"><span class="ask__text options__text">Professional</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="ask_2" class="ask__checkbox options__input" type="radio" value="2" name="ask2">
-											<label for="ask_2" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>
+											<input hidden id="speciality-2" class="ask__checkbox options__input" type="radio" value="2" name="speciality">
+											<label for="speciality-2" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="ask_3" class="ask__checkbox options__input" type="radio" value="3" name="ask2">
-											<label for="ask_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
+											<input hidden id="speciality-3" class="ask__checkbox options__input" type="radio" value="3" name="speciality">
+											<label for="speciality-3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="ask_4" class="ask__checkbox options__input" type="radio" value="4" name="ask2">
-											<label for="ask_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
+											<input hidden id="speciality-4" class="ask__checkbox options__input" type="radio" value="4" name="speciality">
+											<label for="speciality-4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
+											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="speciality-5" class="ask__checkbox options__input" type="radio" value="5" name="speciality">
+											<label for="speciality-5" class="ask__label options__label"><span class="ask__text options__text">Lorem ipsum</span></label>
+											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="speciality-6" class="ask__checkbox options__input" type="radio" value="6" name="speciality">
+											<label for="speciality-6" class="ask__label options__label"><span class="ask__text options__text">Junior</span></label>
+											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+										</div>
+										<div class="ask__item options__item">
+											<input hidden id="speciality-7" class="ask__checkbox options__input" type="radio" value="7" name="speciality">
+											<label for="speciality-7" class="ask__label options__label"><span class="ask__text options__text">Deleniti libero</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 									</div>
@@ -215,80 +170,43 @@
 							</article>
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
-									<h3 class="ask__title">Lorem ipsum dolor sit amet consectetur?</h3>
+									<h3 class="ask__title">Do you want to get a second education?</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="ask_1" class="ask__checkbox options__input" type="radio" value="1" name="ask3">
-											<label for="ask_1" class="ask__label options__label"><span class="ask__text options__text">Professional</span></label>
+											<input hidden id="education-1" class="ask__checkbox options__input" type="radio" value="1" name="education">
+											<label for="education-1" class="ask__label options__label"><span class="ask__text options__text">Yes</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="ask_2" class="ask__checkbox options__input" type="radio" value="2" name="ask3">
-											<label for="ask_2" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_3" class="ask__checkbox options__input" type="radio" value="3" name="ask3">
-											<label for="ask_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_4" class="ask__checkbox options__input" type="radio" value="4" name="ask3">
-											<label for="ask_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
+											<input hidden id="education-2" class="ask__checkbox options__input" type="radio" value="2" name="education">
+											<label for="education-2" class="ask__label options__label"><span class="ask__text options__text">No</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 									</div>
 								</div>
 							</article>
-							<article class="quiz__slide swiper-slide">
+							<article data-question="speciality" class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
-									<h3 class="ask__title">Lorem ipsum dolor sit amet consectetur?</h3>
+									<h3 class="ask__title">Choose your second speciality</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="ask_1" class="ask__checkbox options__input" type="radio" value="1" name="ask4">
-											<label for="ask_1" class="ask__label options__label"><span class="ask__text options__text">Professional</span></label>
+											<input hidden id="second-speciality-1" class="ask__checkbox options__input" type="radio" value="1" name="second-speciality">
+											<label for="second-speciality-1" class="ask__label options__label"><span class="ask__text options__text">Professional</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="ask_2" class="ask__checkbox options__input" type="radio" value="2" name="ask4">
-											<label for="ask_2" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>
+											<input hidden id="second-speciality-2" class="ask__checkbox options__input" type="radio" value="2" name="second-speciality">
+											<label for="second-speciality-2" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="ask_3" class="ask__checkbox options__input" type="radio" value="3" name="ask4">
-											<label for="ask_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
+											<input hidden id="second-speciality-3" class="ask__checkbox options__input" type="radio" value="3" name="second-speciality">
+											<label for="second-speciality-3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="ask_4" class="ask__checkbox options__input" type="radio" value="4" name="ask4">
-											<label for="ask_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="quiz__slide swiper-slide">
-								<div class="quiz__ask ask">
-									<h3 class="ask__title">Lorem ipsum dolor sit amet consectetur?</h3>
-									<div class="ask__buttons options">
-										<div class="ask__item options__item">
-											<input hidden id="ask_1" class="ask__checkbox options__input" type="radio" value="1" name="ask5">
-											<label for="ask_1" class="ask__label options__label"><span class="ask__text options__text">Professional</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_2" class="ask__checkbox options__input" type="radio" value="2" name="ask5">
-											<label for="ask_2" class="ask__label options__label"><span class="ask__text options__text">Other</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_3" class="ask__checkbox options__input" type="radio" value="3" name="ask5">
-											<label for="ask_3" class="ask__label options__label"><span class="ask__text options__text">Bachelor</span></label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
-										</div>
-										<div class="ask__item options__item">
-											<input hidden id="ask_4" class="ask__checkbox options__input" type="radio" value="4" name="ask5">
-											<label for="ask_4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
+											<input hidden id="second-speciality-4" class="ask__checkbox options__input" type="radio" value="4" name="second-speciality">
+											<label for="second-speciality-4" class="ask__label options__label"><span class="ask__text options__text">Master</span></label>
 											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
 										</div>
 									</div>
@@ -428,7 +346,7 @@
 
 	<!-- ======================================================================================================================================================== -->
 
-	<script src="js/app.min.js?_v=20220608194757"></script>
+	<script src="js/app.min.js?_v=20220609111016"></script>
 </body>
 
 </html>
