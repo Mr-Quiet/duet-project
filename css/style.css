@@ -879,6 +879,18 @@ body::after {
   display: flex;
 }
 
+@supports (min-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem )) {
+  .about-university__content {
+    min-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem );
+  }
+}
+
+@supports not (min-height: clamp( 10.625rem , 0.2635542169rem  +  51.8072289157vw , 37.5rem )) {
+  .about-university__content {
+    min-height: calc(10.625rem + 26.875 * (100vw - 20rem) / 51.875);
+  }
+}
+
 .about-university__video {
   height: 100%;
   margin: 0 auto;
