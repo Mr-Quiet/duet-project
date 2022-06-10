@@ -2366,8 +2366,8 @@ body::after {
   }
 
   .submit-form {
-    right: 0.625rem;
-    bottom: 0.625rem;
+    right: 0.9375rem;
+    bottom: 0.9375rem;
     max-width: 15.625rem;
   }
 
