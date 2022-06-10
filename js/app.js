@@ -6527,10 +6527,7 @@
             document.documentElement.classList.add("_active-video");
             video.play();
         }
-        if (target.closest('.ask__label[for="education-2"]')) {
-            script_removeSlide(3);
-            addButtonsClass();
-        }
+        if (target.closest('.ask__label[for="education-2"]')) script_removeSlide(3);
         if (target.closest(".ask__label")) script_slideNext();
         if (target.closest(".ask__button")) {
             numberOfQuestions();
@@ -6545,7 +6542,7 @@
     function script_removeSlide(index) {
         const quizSlider = document.querySelector(".quiz__slider").swiper;
         quizSlider.removeSlide(index);
-        numberOfQuestions();
+        numberOfQuestions(index);
     }
     function script_addSlide(position, question, dataAttr) {
         if (!document.querySelector(dataAttr)) {
@@ -6576,12 +6573,12 @@
             }
         }));
     }
-    function numberOfQuestions() {
+    function numberOfQuestions(index) {
         const quizSlides = document.querySelectorAll(".quiz__slide");
         const quizControl = document.querySelector(".control-quiz__wrapper");
         quizControl.innerHTML = ``;
         quizSlides.forEach(((quizSlide, i) => {
-            quizControl.innerHTML += `\n\t\t<div class="control-quiz__slide swiper-slide">\n\t\t\t\t<div class="control-quiz__bullet"><span class="control-quiz__number">${i + 1}</span></div>\n\t\t</div>\n\t\t`;
+            quizControl.innerHTML += `\n\t\t<div class="control-quiz__slide swiper-slide ${index && i < index ? "_prev" : ""}">\n\t\t\t\t<div class="control-quiz__bullet"><span class="control-quiz__number">${i + 1}</span></div>\n\t\t</div>\n\t\t`;
         }));
     }
     function addBulletActiveClass() {
