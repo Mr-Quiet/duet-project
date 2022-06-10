@@ -6533,9 +6533,11 @@
             numberOfQuestions();
             const quizSlider = document.querySelector(".quiz__slider").swiper;
             quizSlider.slideTo(0);
-            script_addSlide(questions.speciality.position, questions.speciality.ask, questions.speciality.dataAttr);
             const quizControl = document.querySelector(".control-quiz__slider").swiper;
             quizControl.slideTo(0);
+            setTimeout((() => {
+                script_addSlide(questions.speciality.position, questions.speciality.ask, questions.speciality.dataAttr);
+            }), 1e3);
         }
         if (target.closest(".ask__button-tippy")) e.preventDefault();
     }));
