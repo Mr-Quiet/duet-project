@@ -6421,8 +6421,8 @@
                 speed: 700,
                 spaceBetween: 30,
                 autoHeight: true,
-                touchRatio: 0,
-                simulateTouch: false,
+                touchRatio: 1,
+                simulateTouch: true,
                 pagination: {
                     el: ".swiper-pagination",
                     type: "bullets"
