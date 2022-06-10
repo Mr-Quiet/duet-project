@@ -6537,7 +6537,7 @@
             quizControl.slideTo(0);
             setTimeout((() => {
                 script_addSlide(questions.speciality.position, questions.speciality.ask, questions.speciality.dataAttr);
-            }), 1e3);
+            }), 500);
         }
         if (target.closest(".ask__button-tippy")) e.preventDefault();
     }));
@@ -6587,7 +6587,6 @@
         const activeSlideControl = document.querySelector(".swiper-slide-prev");
         activeSlideControl.classList.add("_prev");
     }
-    document.addEventListener("formSent", (function(e) {}));
     window["FLS"] = false;
     isWebp();
     addTouchClass();
