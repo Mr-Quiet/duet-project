@@ -350,7 +350,69 @@
             this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
         }
     }
-    flsModules.popup = new Popup({});
+    flsModules.popup = new Popup({
+        logging: true,
+        init: true,
+        attributeOpenButton: "data-popup",
+        attributeCloseButton: "data-close",
+        fixElementSelector: "[data-lp]",
+        youtubeAttribute: "data-popup-youtube",
+        youtubePlaceAttribute: "data-popup-youtube-place",
+        setAutoplayYoutube: true,
+        classes: {
+            popup: "popup",
+            popupContent: "popup__content",
+            popupActive: "popup_show",
+            bodyActive: "popup-show"
+        },
+        focusCatch: true,
+        closeEsc: true,
+        bodyLock: true,
+        hashSettings: {
+            location: true,
+            goHash: true
+        },
+        on: {
+            beforeOpen: function() {},
+            afterOpen: function() {},
+            beforeClose: function() {},
+            afterClose: function() {}
+        }
+    });
+    flsModules.popupForm = new Popup({
+        logging: true,
+        init: true,
+        attributeOpenButton: "data-popup",
+        attributeCloseButton: "data-close",
+        fixElementSelector: "[data-lp]",
+        youtubeAttribute: "data-popup-youtube",
+        youtubePlaceAttribute: "data-popup-youtube-place",
+        setAutoplayYoutube: false,
+        classes: {
+            popup: "submit-form",
+            popupContent: "submit-form__content",
+            popupActive: "submit-form_show",
+            bodyActive: "submit-form-show"
+        },
+        focusCatch: false,
+        closeEsc: false,
+        bodyLock: false,
+        hashSettings: {
+            location: false,
+            goHash: false
+        },
+        on: {
+            beforeOpen: function(popup) {
+                bodyUnlock();
+                setTimeout((() => {
+                    popup.close();
+                }), 3e3);
+            },
+            afterOpen: function() {},
+            beforeClose: function() {},
+            afterClose: function() {}
+        }
+    });
     let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
         const targetBlockElement = document.querySelector(targetBlock);
         if (targetBlockElement) {
@@ -539,7 +601,7 @@
             setTimeout((() => {
                 if (flsModules.popup) {
                     const popup = form.dataset.popupMessage;
-                    popup ? flsModules.popup.open(popup) : null;
+                    if ("#quiz-form" === popup || "#contact-form" === popup) popup ? flsModules.popupForm.open(popup) : null; else popup ? flsModules.popup.open(popup) : null;
                 }
             }), 0);
             formValidate.formClean(form);

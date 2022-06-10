@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220609220210">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220610132636">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,7 +98,7 @@
 						</div>
 					</div>
 					<div class="quiz__slider swiper">
-						<form data-dev data-popup-message="#submit-form" action="" method="post" class="quiz__wrapper swiper-wrapper">
+						<form data-dev data-popup-message="#quiz-form" action="" method="post" class="quiz__wrapper swiper-wrapper">
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
 									<h3 class="ask__title">Choose your degree</h3>
@@ -268,7 +268,7 @@
 							<h2 class="contact__title">Contact Us</h2>
 							<p class="contact__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
 						</div>
-						<form data-dev data-popup-message="#submit-form" class="contact__form" action="" method="post">
+						<form data-dev data-popup-message="#contact-form" class="contact__form" action="" method="post">
 							<div class="contact__input contact__input_name">
 								<label for="input-name">Name</label>
 								<input data-required autocomplete="off" id="input-name" type="text" name="form[]" data-error="Enter your name" placeholder="Ivan Ivanov" class="input">
@@ -330,23 +330,51 @@
 			</div>
 		</footer>
 	</div>
-	<div id="submit-form" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<button data-close type="button" class="popup__close"></button>
-				<div class="popup__body">
-					<p class="popup__text">
-						Thank you for your feedback. <br> We will contact you
+	<!-- <div id="sub" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__body">
+				<p class="popup__text">
+					Thank you for your feedback. <br> We will contact you
+				</p>
+				<div class="popup__image-ibg"><picture><source srcset="img/popup/submit-form/done.webp" type="image/webp"><img src="img/popup/submit-form/done.png" alt=""></picture></div>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+	<!-- ======================================================================================================================================================== -->
+
+	<div id="quiz-form" aria-hidden="true" class="submit-form errors-container">
+		<div class="submit-form__wrapper">
+			<div class="submit-form__content">
+				<button data-close type="button" class="submit-form__close"></button>
+				<div class="submit-form__body">
+					<p class="submit-form__text">
+						Thank you for your feedback. <br> Good day!
 					</p>
-					<div class="popup__image-ibg"><picture><source srcset="img/popup/submit-form/done.webp" type="image/webp"><img src="img/popup/submit-form/done.png" alt=""></picture></div>
+					<div class="submit-form__image-ibg"><picture><source srcset="img/popup/submit-form/done.webp" type="image/webp"><img src="img/popup/submit-form/done.png" alt=""></picture></div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- ======================================================================================================================================================== -->
+	<div id="contact-form" aria-hidden="true" class="submit-form errors-container">
+		<div class="submit-form__wrapper">
+			<div class="submit-form__content">
+				<button data-close type="button" class="submit-form__close"></button>
+				<div class="submit-form__body">
+					<p class="submit-form__text">
+						Thank you for your feedback. <br> We will contact you
+					</p>
+					<div class="submit-form__image-ibg"><picture><source srcset="img/popup/submit-form/done.webp" type="image/webp"><img src="img/popup/submit-form/done.png" alt=""></picture></div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<script src="js/app.min.js?_v=20220609220210"></script>
+	<script src="js/app.min.js?_v=20220610132636"></script>
 </body>
 
 </html>
