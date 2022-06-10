@@ -109,6 +109,7 @@
     class Popup {
         constructor(options) {
             let config = {
+                closeEmpty: true,
                 logging: true,
                 init: true,
                 attributeOpenButton: "data-popup",
@@ -197,7 +198,7 @@
                     return;
                 }
                 const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
-                if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
+                if ((buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) && this.closeEmpty) {
                     e.preventDefault();
                     this.close();
                     return;
@@ -351,6 +352,7 @@
         }
     }
     flsModules.popup = new Popup({
+        closeEmpty: true,
         logging: true,
         init: true,
         attributeOpenButton: "data-popup",
@@ -380,6 +382,7 @@
         }
     });
     flsModules.popupForm = new Popup({
+        closeEmpty: false,
         logging: true,
         init: true,
         attributeOpenButton: "data-popup",
@@ -6421,8 +6424,8 @@
                 speed: 700,
                 spaceBetween: 30,
                 autoHeight: true,
-                touchRatio: 1,
-                simulateTouch: true,
+                touchRatio: 0,
+                simulateTouch: false,
                 pagination: {
                     el: ".swiper-pagination",
                     type: "bullets"
@@ -6528,11 +6531,7 @@
             video.play();
         }
         if (target.closest('.ask__label[for="education-2"]')) script_removeSlide(3);
-        if (target.closest(".ask__label")) {
-            const input = e.target.previousElementSibling;
-            input.setAttribute("checked", "");
-            script_slideNext();
-        }
+        if (target.closest(".ask__label")) script_slideNext();
         if (target.closest(".ask__button")) {
             numberOfQuestions();
             const quizSlider = document.querySelector(".quiz__slider").swiper;
@@ -6541,7 +6540,7 @@
             quizControl.slideTo(0);
             setTimeout((() => {
                 script_addSlide(questions.speciality.position, questions.speciality.ask, questions.speciality.dataAttr);
-            }), 500);
+            }), 700);
         }
         if (target.closest(".ask__button-tippy")) e.preventDefault();
     }));
