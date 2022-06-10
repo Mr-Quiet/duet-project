@@ -6528,7 +6528,11 @@
             video.play();
         }
         if (target.closest('.ask__label[for="education-2"]')) script_removeSlide(3);
-        if (target.closest(".ask__label")) script_slideNext();
+        if (target.closest(".ask__label")) {
+            const input = e.target.previousElementSibling;
+            input.setAttribute("checked", "");
+            script_slideNext();
+        }
         if (target.closest(".ask__button")) {
             numberOfQuestions();
             const quizSlider = document.querySelector(".quiz__slider").swiper;
