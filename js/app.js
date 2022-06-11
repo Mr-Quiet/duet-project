@@ -6530,26 +6530,28 @@
             document.documentElement.classList.add("_active-video");
             video.play();
         }
-        if (target.closest('.ask__label[for="education-2"]')) script_removeSlide(3);
-        if (target.closest(".ask__label")) script_slideNext();
-        if (target.closest(".ask__button")) {
-            numberOfQuestions();
-            const quizSlider = document.querySelector(".quiz__slider").swiper;
-            quizSlider.slideTo(0);
-            const quizControl = document.querySelector(".control-quiz__slider").swiper;
-            quizControl.slideTo(0);
-            setTimeout((() => {
-                script_addSlide(questions.speciality.position, questions.speciality.ask, questions.speciality.dataAttr);
-            }), 700);
-        }
+        if (target.closest('.ask__label[for="education-2"]')) removeNextSlide();
+        if (target.closest(".ask__label")) script_slideNext(e);
+        if (target.closest(".ask__button")) resetSlider();
         if (target.closest(".ask__button-tippy")) e.preventDefault();
     }));
-    function script_removeSlide(index) {
+    function resetSlider() {
+        numberOfQuestions();
         const quizSlider = document.querySelector(".quiz__slider").swiper;
+        quizSlider.slideTo(0);
+        const quizControl = document.querySelector(".control-quiz__slider").swiper;
+        quizControl.slideTo(0);
+        setTimeout((() => {
+            slideAddPosition(questions.speciality.position, questions.speciality.ask, questions.speciality.dataAttr);
+        }), 700);
+    }
+    function removeNextSlide() {
+        const quizSlider = document.querySelector(".quiz__slider").swiper;
+        const index = quizSlider.realIndex + 1;
         quizSlider.removeSlide(index);
         numberOfQuestions(index);
     }
-    function script_addSlide(position, question, dataAttr) {
+    function slideAddPosition(position, question, dataAttr) {
         if (!document.querySelector(dataAttr)) {
             const quizSlider = document.querySelector(".quiz__slider").swiper;
             quizSlider.addSlide(position, question);
@@ -6557,12 +6559,17 @@
             addButtonsClass();
         }
     }
-    function script_slideNext() {
-        const quizControl = document.querySelector(".control-quiz__slider").swiper;
-        quizControl.slideNext();
-        const quizSlider = document.querySelector(".quiz__slider").swiper;
-        quizSlider.slideNext();
-        addBulletActiveClass();
+    function script_slideNext(event) {
+        const checkbox = event.target.previousElementSibling;
+        setTimeout((() => {
+            if (checkbox.checked) {
+                const quizControl = document.querySelector(".control-quiz__slider").swiper;
+                quizControl.slideNext();
+                const quizSlider = document.querySelector(".quiz__slider").swiper;
+                quizSlider.slideNext();
+                addBulletActiveClass();
+            }
+        }), 0);
     }
     function addButtonsClass() {
         const buttons = document.querySelectorAll(".ask__buttons");
