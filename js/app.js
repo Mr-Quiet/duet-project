@@ -6561,11 +6561,11 @@
     }
     function script_slideNext(event) {
         const checkbox = event.target.previousElementSibling;
+        const quizControl = document.querySelector(".control-quiz__slider").swiper;
+        const quizSlider = document.querySelector(".quiz__slider").swiper;
         setTimeout((() => {
             if (checkbox.checked) {
-                const quizControl = document.querySelector(".control-quiz__slider").swiper;
                 quizControl.slideNext();
-                const quizSlider = document.querySelector(".quiz__slider").swiper;
                 quizSlider.slideNext();
                 addBulletActiveClass();
             }
