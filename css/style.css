@@ -1070,6 +1070,7 @@ body::after {
   width: 100%;
   height: 100%;
   background-color: #04134e;
+  border-radius: 3.125rem;
   -webkit-transition: opacity 0.2s ease 0s, -webkit-transform 0.3s ease 0s;
   transition: opacity 0.2s ease 0s, -webkit-transform 0.3s ease 0s;
   -o-transition: transform 0.3s ease 0s, opacity 0.2s ease 0s;
