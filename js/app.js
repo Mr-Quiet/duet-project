@@ -198,7 +198,7 @@
                     return;
                 }
                 const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
-                if ((buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) && this.closeEmpty) {
+                if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.options.closeEmpty && this.isOpen) {
                     e.preventDefault();
                     this.close();
                     return;
@@ -351,7 +351,7 @@
             this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
         }
     }
-    flsModules.popup = new Popup({
+    const popups = [ {
         closeEmpty: true,
         logging: true,
         init: true,
@@ -380,11 +380,10 @@
             beforeClose: function() {},
             afterClose: function() {}
         }
-    });
-    flsModules.popupForm = new Popup({
+    }, {
         closeEmpty: false,
-        logging: true,
-        init: true,
+        logging: false,
+        init: false,
         attributeOpenButton: "data-popup",
         attributeCloseButton: "data-close",
         fixElementSelector: "[data-lp]",
@@ -415,6 +414,12 @@
             beforeClose: function() {},
             afterClose: function() {}
         }
+    } ];
+    flsModules.popup = new Popup({
+        ...popups[0]
+    });
+    flsModules.popupForm = new Popup({
+        ...popups[1]
     });
     let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
         const targetBlockElement = document.querySelector(targetBlock);
@@ -6530,9 +6535,14 @@
             document.documentElement.classList.add("_active-video");
             video.play();
         }
-        if (target.closest('.ask__label[for="education-2"]')) removeNextSlide();
-        if (target.closest(".ask__label")) script_slideNext(e);
-        if (target.closest(".ask__button")) resetSlider();
+        if (target.closest(".ask__label")) {
+            if (target.closest('.ask__label[for="education-2"]')) removeNextSlide();
+            script_slideNext(e);
+        }
+        if (target.closest(".ask__button")) {
+            if (target.closest('.ask__button[type="submit"]')) ;
+            resetSlider();
+        }
         if (target.closest(".ask__button-tippy")) e.preventDefault();
     }));
     function resetSlider() {
