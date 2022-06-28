@@ -6529,19 +6529,22 @@
     const video = document.querySelector(".about-university__video");
     addButtonsClass();
     numberOfQuestions();
-    document.addEventListener("click", (function(e) {
-        const target = e.target;
-        if (target.closest(".about-university__button")) {
-            document.documentElement.classList.add("_active-video");
-            video.play();
-        }
-        if (target.closest(".ask__label")) {
-            if (target.closest('.ask__label[for="education-2"]')) removeNextSlide();
-            script_slideNext(e);
-        }
-        if (target.closest(".ask__button")) resetSlider();
-        if (target.closest(".ask__button-tippy")) e.preventDefault();
-    }));
+    window.addEventListener("load", mainFunc);
+    function mainFunc(params) {
+        document.addEventListener("click", (function(e) {
+            const target = e.target;
+            if (target.closest(".about-university__button")) {
+                document.documentElement.classList.add("_active-video");
+                video.play();
+            }
+            if (target.closest(".ask__label")) {
+                if (target.closest('.ask__label[for="education-2"]')) removeNextSlide();
+                script_slideNext(e);
+            }
+            if (target.closest(".ask__button")) resetSlider();
+            if (target.closest(".ask__button-tippy")) e.preventDefault();
+        }));
+    }
     function resetSlider() {
         numberOfQuestions();
         const quizSlider = document.querySelector(".quiz__slider").swiper;
