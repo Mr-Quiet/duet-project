@@ -6539,10 +6539,7 @@
             if (target.closest('.ask__label[for="education-2"]')) removeNextSlide();
             script_slideNext(e);
         }
-        if (target.closest(".ask__button")) {
-            if (target.closest('.ask__button[type="submit"]')) ;
-            resetSlider();
-        }
+        if (target.closest(".ask__button")) resetSlider();
         if (target.closest(".ask__button-tippy")) e.preventDefault();
     }));
     function resetSlider() {
