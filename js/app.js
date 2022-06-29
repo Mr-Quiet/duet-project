@@ -6544,6 +6544,10 @@
             if (target.closest(".ask__button")) resetSlider();
             if (target.closest(".ask__button-tippy")) e.preventDefault();
         }));
+        video.addEventListener("ended", resetVideo, false);
+        function resetVideo(e) {
+            video.currentTime = 0;
+        }
     }
     function resetSlider() {
         numberOfQuestions();
