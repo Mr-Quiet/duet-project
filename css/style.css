@@ -759,6 +759,8 @@ body::after {
 
 .icon-menu {
   display: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 .footer {
@@ -2443,7 +2445,7 @@ body::after {
   }
 }
 
-@media (min-width: 25em) and (max-width: 47.99875em) {
+@media (min-width: 24.625em) and (max-width: 47.99875em) {
   .top__title {
     padding-right: 3.4375rem;
   }
