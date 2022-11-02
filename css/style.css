@@ -2491,6 +2491,10 @@ body::after {
     left: 0.625rem;
   }
 
+  .language-btn__btn {
+    padding: 0.9375rem;
+  }
+
   .lang-btn {
     bottom: 4.375rem;
     left: 0.625rem;
