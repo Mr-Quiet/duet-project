@@ -6,20 +6,21 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220717134450">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221102091916">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="DUET Quiz">
 </head>
 
 <body>
 	<div class="wrapper">
 		<header data-scroll="80" data-scroll-show class="header">
 			<div class="header__container">
-				<a href="#" class="header__logo _icon-duet-logo"></a>
+				<a href="#" class="header__logo _icon-duet-logo" aria-label="duet-logo"></a>
 
 				<div class="header__menu menu">
-					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<button name="burger" aria-label="burger-menu" type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item"><a data-goto=".wrapper" href="#" class="menu__link">Home</a></li>
@@ -37,7 +38,7 @@
 			<section data-fullscreen class="page__top top">
 				<div class="top__container">
 					<div class="top__content">
-						<h1 class="top__title _icon-title-decor _title-decor">A good <span>education</span> is a foundation for better future</h1>
+						<h1 class="top__title _icon-title-decor _title-decor">A good <span>education</span><br>is a foundation for better future</h1>
 						<p class="top__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
 						<button data-goto-header="80" data-goto=".page__quiz" type="button" class="top__button button">Take a survey</button>
 					</div>
@@ -50,12 +51,12 @@
 						<source src="img/about/duet-video.mp4">
 					</video>
 					<div class="about-university__splash">
-						<picture><source srcset="img/about/duet-photo.webp" type="image/webp"><img class="about-university__bgimage" src="img/about/duet-photo.jpg" alt=""></picture>
+						<picture><source srcset="img/about/duet-photo.webp" type="image/webp"><img class="about-university__bgimage" src="img/about/duet-photo.jpg" alt="Фон"></picture>
 						<div class="about-university__body">
 							<div class="about-university__items">
 								<h2 class="about-university__title">State University of Economics and Technology</h2>
 								<p class="about-university__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
-								<button type="submit" class="about-university__button"><img class="about-university__image" src="img/about/play.svg" /></button>
+								<button type="submit" class="about-university__button"><img class="about-university__image" alt="Play" src="img/about/play.svg" /></button>
 							</div>
 						</div>
 					</div>
@@ -104,24 +105,24 @@
 									<h3 class="ask__title">Choose your degree</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="degree-1" class="ask__checkbox options__input" type="radio" value="1" name="degree">
+											<input hidden tabindex="-1" id="degree-1" class="ask__checkbox options__input" type="radio" value="1" name="degree">
 											<label for="degree-1" class="ask__label options__label">Professional junior bachelor</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="degree-2" class="ask__checkbox options__input" type="radio" value="2" name="degree">
+											<input hidden tabindex="-1" id="degree-2" class="ask__checkbox options__input" type="radio" value="2" name="degree">
 											<label for="degree-2" class="ask__label options__label">Junior Bachelor</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="degree-3" class="ask__checkbox options__input" type="radio" value="3" name="degree">
+											<input hidden tabindex="-1" id="degree-3" class="ask__checkbox options__input" type="radio" value="3" name="degree">
 											<label for="degree-3" class="ask__label options__label">Bachelor</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="degree-4" class="ask__checkbox options__input" type="radio" value="4" name="degree">
+											<input hidden tabindex="-1" id="degree-4" class="ask__checkbox options__input" type="radio" value="4" name="degree">
 											<label for="degree-4" class="ask__label options__label">Master</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 									</div>
 								</div>
@@ -131,39 +132,39 @@
 									<h3 class="ask__title">Choose your speciality</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="speciality-1" class="ask__checkbox options__input" type="radio" value="1" name="speciality">
+											<input hidden tabindex="-1" id="speciality-1" class="ask__checkbox options__input" type="radio" value="1" name="speciality">
 											<label for="speciality-1" class="ask__label options__label">Professional</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="speciality-2" class="ask__checkbox options__input" type="radio" value="2" name="speciality">
+											<input hidden tabindex="-1" id="speciality-2" class="ask__checkbox options__input" type="radio" value="2" name="speciality">
 											<label for="speciality-2" class="ask__label options__label">Other</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="speciality-3" class="ask__checkbox options__input" type="radio" value="3" name="speciality">
+											<input hidden tabindex="-1" id="speciality-3" class="ask__checkbox options__input" type="radio" value="3" name="speciality">
 											<label for="speciality-3" class="ask__label options__label">Bachelor</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="speciality-4" class="ask__checkbox options__input" type="radio" value="4" name="speciality">
+											<input hidden tabindex="-1" id="speciality-4" class="ask__checkbox options__input" type="radio" value="4" name="speciality">
 											<label for="speciality-4" class="ask__label options__label">Master</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="speciality-5" class="ask__checkbox options__input" type="radio" value="5" name="speciality">
+											<input hidden tabindex="-1" id="speciality-5" class="ask__checkbox options__input" type="radio" value="5" name="speciality">
 											<label for="speciality-5" class="ask__label options__label">Lorem ipsum</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="speciality-6" class="ask__checkbox options__input" type="radio" value="6" name="speciality">
+											<input hidden tabindex="-1" id="speciality-6" class="ask__checkbox options__input" type="radio" value="6" name="speciality">
 											<label for="speciality-6" class="ask__label options__label">Junior</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="speciality-7" class="ask__checkbox options__input" type="radio" value="7" name="speciality">
+											<input hidden tabindex="-1" id="speciality-7" class="ask__checkbox options__input" type="radio" value="7" name="speciality">
 											<label for="speciality-7" class="ask__label options__label">Deleniti libero</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 									</div>
 								</div>
@@ -173,14 +174,14 @@
 									<h3 class="ask__title">Do you want to get a second education?</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="education-1" class="ask__checkbox options__input" type="radio" value="1" name="education">
+											<input hidden tabindex="-1" id="education-1" class="ask__checkbox options__input" type="radio" value="1" name="education">
 											<label for="education-1" class="ask__label options__label">Yes</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="education-2" class="ask__checkbox options__input" type="radio" value="2" name="education">
+											<input hidden tabindex="-1" id="education-2" class="ask__checkbox options__input" type="radio" value="2" name="education">
 											<label for="education-2" class="ask__label options__label">No</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 									</div>
 								</div>
@@ -190,38 +191,53 @@
 									<h3 class="ask__title">Choose your second speciality</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<input hidden id="second-speciality-1" class="ask__checkbox options__input" type="radio" value="1" name="second-speciality">
+											<input hidden tabindex="-1" id="second-speciality-1" class="ask__checkbox options__input" type="radio" value="1" name="second-speciality">
 											<label for="second-speciality-1" class="ask__label options__label">Professional</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="second-speciality-2" class="ask__checkbox options__input" type="radio" value="2" name="second-speciality">
+											<input hidden tabindex="-1" id="second-speciality-2" class="ask__checkbox options__input" type="radio" value="2" name="second-speciality">
 											<label for="second-speciality-2" class="ask__label options__label">Other</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="second-speciality-3" class="ask__checkbox options__input" type="radio" value="3" name="second-speciality">
+											<input hidden tabindex="-1" id="second-speciality-3" class="ask__checkbox options__input" type="radio" value="3" name="second-speciality">
 											<label for="second-speciality-3" class="ask__label options__label">Bachelor</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 										<div class="ask__item options__item">
-											<input hidden id="second-speciality-4" class="ask__checkbox options__input" type="radio" value="4" name="second-speciality">
+											<input hidden tabindex="-1" id="second-speciality-4" class="ask__checkbox options__input" type="radio" value="4" name="second-speciality">
 											<label for="second-speciality-4" class="ask__label options__label">Master</label>
-											<button data-tippy-content="Подсказка" type="submit" class="ask__button-tippy">?</button>
+											<button data-tippy-content="Подсказка" tabindex="-1" type="submit" class="ask__button-tippy">?</button>
 										</div>
 									</div>
 								</div>
 							</article>
 							<article class="quiz__slide swiper-slide">
 								<div class="quiz__ask ask">
-									<h3 class="ask__title">Thanks, you passed the test <br> Submit your result?</h3>
+									<h3 class="ask__title">Submit your result?</h3>
 									<div class="ask__buttons options">
 										<div class="ask__item options__item">
-											<button type="reset" class="ask__button">Reset</button>
+											<button type="reset" tabindex="-1" class="ask__button">Reset</button>
 										</div>
 										<div class="ask__item options__item">
-											<button type="submit" class="ask__button">Submit</button>
+											<button type="submit" tabindex="-1" class="ask__label">Submit</button>
 										</div>
+									</div>
+								</div>
+							</article>
+							<article class="quiz__slide swiper-slide">
+								<div class="quiz__ask ask">
+									<h3 class="ask__title">Thanks, you passed the test</h3>
+									<div class="ask__buttons options">
+										<div class="ask__item options__item">
+											<button type="reset" tabindex="-1" class="ask__button">Take another quiz</button>
+										</div>
+										<div class="ask__item options__item">
+											<!-- <button type="reset" class="ask__button">Reset</button> -->
+											<a href="#" target="_blank" tabindex="-1" class="ask__label">Your result</a>
+										</div>
+
 									</div>
 								</div>
 							</article>
@@ -287,16 +303,29 @@
 				</div>
 			</section>
 		</main>
+
+		<div class="language-btn language-btn_hidden">
+			<button class="language-btn__btn" id="landShow">
+				<svg aria-hidden="true" focusable="false" data-icon="globe" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
+					<path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm179.3 160h-67.2c-6.7-36.5-17.5-68.8-31.2-94.7 42.9 19 77.7 52.7 98.4 94.7zM248 56c18.6 0 48.6 41.2 63.2 112H184.8C199.4 97.2 229.4 56 248 56zM48 256c0-13.7 1.4-27.1 4-40h77.7c-1 13.1-1.7 26.3-1.7 40s.7 26.9 1.7 40H52c-2.6-12.9-4-26.3-4-40zm20.7 88h67.2c6.7 36.5 17.5 68.8 31.2 94.7-42.9-19-77.7-52.7-98.4-94.7zm67.2-176H68.7c20.7-42 55.5-75.7 98.4-94.7-13.7 25.9-24.5 58.2-31.2 94.7zM248 456c-18.6 0-48.6-41.2-63.2-112h126.5c-14.7 70.8-44.7 112-63.3 112zm70.1-160H177.9c-1.1-12.8-1.9-26-1.9-40s.8-27.2 1.9-40h140.3c1.1 12.8 1.9 26 1.9 40s-.9 27.2-2 40zm10.8 142.7c13.7-25.9 24.4-58.2 31.2-94.7h67.2c-20.7 42-55.5 75.7-98.4 94.7zM366.3 296c1-13.1 1.7-26.3 1.7-40s-.7-26.9-1.7-40H444c2.6 12.9 4 26.3 4 40s-1.4 27.1-4 40h-77.7z"></path>
+				</svg><!-- <i class="far fa-globe"></i> -->
+			</button>
+			<div class="language-btn__lang lang-btn" id="langShowerMenu">
+				<a href="../" class="lang-btn__link">Uk</a>
+				<a href="../en/" class="lang-btn__link">En</a>
+			</div>
+		</div>
+
 		<footer class="footer">
 			<div class="footer__container footer__container_slim">
 				<div class="footer__body body-footer">
 					<div class="body-footer__column body-footer__column_logo">
-						<a href="#" class="body-footer__logo _icon-duet-logo"></a>
+						<a href="#" class="body-footer__logo _icon-duet-logo" aria-label="logo"></a>
 						<p class="body-footer__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
 						<ul class="body-footer__social-networks">
-							<li class="body-footer__item"><a href="#" class="body-footer__link _icon-facebook"></a></li>
-							<li class="body-footer__item"><a href="#" class="body-footer__link _icon-instagram"></a></li>
-							<li class="body-footer__item"><a href="#" class="body-footer__link _icon-telegram"></a></li>
+							<li class="body-footer__item"><a href="#" class="body-footer__link _icon-facebook" aria-label="facebook"></a></li>
+							<li class="body-footer__item"><a href="#" class="body-footer__link _icon-instagram" aria-label="instagram"></a></li>
+							<li class="body-footer__item"><a href="#" class="body-footer__link _icon-telegram" aria-label="telegram"></a></li>
 						</ul>
 					</div>
 					<div class="body-footer__column body-footer__column_about">
@@ -374,7 +403,7 @@
 		</div>
 	</div>
 
-	<script src="js/app.min.js?_v=20220717134450"></script>
+	<script src="js/app.min.js?_v=20221102091916"></script>
 </body>
 
 </html>

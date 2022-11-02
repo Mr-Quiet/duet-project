@@ -6396,8 +6396,12 @@
                         slidesPerView: 1.4,
                         spaceBetween: 10
                     },
+                    768: {
+                        slidesPerView: 1.6,
+                        spaceBetween: 20
+                    },
                     992: {
-                        spaceBetween: 15,
+                        spaceBetween: 10,
                         slidesPerView: 3
                     },
                     1024: {}
@@ -6530,18 +6534,19 @@
     addButtonsClass();
     numberOfQuestions();
     window.addEventListener("load", mainFunc);
-    function mainFunc(params) {
+    function mainFunc() {
         document.addEventListener("click", (function(e) {
             const target = e.target;
             if (target.closest(".about-university__button")) {
                 document.documentElement.classList.add("_active-video");
                 video.play();
             }
+            if (target.closest(".language-btn__btn")) target.parentElement.classList.toggle("language-btn_hidden");
             if (target.closest(".ask__label")) {
                 if (target.closest('.ask__label[for="education-2"]')) removeNextSlide();
                 script_slideNext(e);
             }
-            if (target.closest(".ask__button")) resetSlider();
+            if (target.closest(".ask__button")) if (target.closest('.ask__button[type="submit"]')) script_slideNext(e); else resetSlider();
             if (target.closest(".ask__button-tippy")) e.preventDefault();
         }));
         video.addEventListener("ended", resetVideo, false);
@@ -6578,24 +6583,38 @@
         const quizControl = document.querySelector(".control-quiz__slider").swiper;
         const quizSlider = document.querySelector(".quiz__slider").swiper;
         setTimeout((() => {
-            if (checkbox.checked) {
+            if (checkbox && checkbox.checked) {
+                quizControl.slideNext();
+                quizSlider.slideNext();
+                addBulletActiveClass();
+            } else if (event.target.classList.contains("ask__label")) {
                 quizControl.slideNext();
                 quizSlider.slideNext();
                 addBulletActiveClass();
             }
         }), 0);
     }
+    window.addEventListener("resize", addButtonsClass);
     function addButtonsClass() {
         const buttons = document.querySelectorAll(".ask__buttons");
         if (buttons.length) buttons.forEach(((button, i) => {
             if (button.children.length < 6) {
                 if (!button.classList.contains("ask__buttons_two")) {
                     button.classList.add("ask__buttons_two");
-                    if (button.children.length % 2) button.children[button.children.length - 1].classList.add("ask__item_span-two");
+                    if (button.children.length % 2) {
+                        console.log(0);
+                        button.children[button.children.length - 1].classList.add("ask__item_span-two");
+                    }
                 }
             } else if (button.children.length > 5) {
                 if (!button.classList.contains("ask__buttons_three")) button.classList.add("ask__buttons_three");
-                if (button.children.length % 2) button.children[button.children.length - 1].classList.add("ask__item_span-three");
+                if (document.documentElement.clientWidth >= 480 && button.children.length % 3 === 1) button.children[button.children.length - 1].classList.add("ask__item_span-three");
+                if (document.documentElement.clientWidth < 480) button.children[button.children.length - 1].classList.remove("ask__item_span-three");
+                if (button.children.length % 2 === 1 && document.documentElement.clientWidth < 480) {
+                    button.children[button.children.length - 1].classList.remove("ask__item_span-three");
+                    button.children[button.children.length - 1].classList.add("ask__item_span-two");
+                }
+                if (button.children.length % 2 === 0 || button.children.length % 2 === 1 && document.documentElement.clientWidth >= 480) button.children[button.children.length - 1].classList.remove("ask__item_span-two");
             }
         }));
     }
