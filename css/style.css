@@ -1499,6 +1499,7 @@ body::after {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+  min-height: 5rem;
 }
 
 @supports (padding-top: clamp( 1.875rem , -0.6872775801rem  +  5.3380782918vw , 3.75rem )) {
